@@ -1,4 +1,4 @@
 dev-ios:
-	react-native run-ios --simulator="iPhone 6"
+	yarn run postinstall && react-native run-ios --simulator="iPhone 6"
 dev-android:
-	react-native run-android
+	yarn run postinstall && react-native run-android
