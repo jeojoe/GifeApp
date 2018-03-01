@@ -5,17 +5,16 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
+import { Colors } from '../../_utils_';
 
 const SplashScreen = () => (
-  <View style={s.container}>
-    <Text>Splashh!!</Text>
-  </View>
+  <View style={s.container} />
 );
 
 const s = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: Colors.main,
   },
 });
 
