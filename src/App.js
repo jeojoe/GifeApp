@@ -5,9 +5,9 @@ import {
   Text,
   AsyncStorage,
 } from 'react-native';
+// import SplashScreen from 'react-native-splash-screen';
 
 import {
-  SplashScreen,
   LoginScreen,
   AuthService,
 } from './Auth';
@@ -16,13 +16,11 @@ type Props = {};
 
 type State = {
   isLoggedIn: boolean,
-  isTokenFetched: boolean,
   isInvited: boolean
 };
 
 export default class App extends Component<Props, State> {
   state = {
-    isTokenFetched: false,
     isLoggedIn: false,
     isInvited: false,
   }
@@ -30,9 +28,11 @@ export default class App extends Component<Props, State> {
   async componentWillMount() {
     const token = await AuthService.getToken();
     if (token) {
-      this.setState({ isTokenFetched: true, isLoggedIn: true });
+      this.setState({ isLoggedIn: true });
+      // SplashScreen.hide();
     } else {
-      this.setState({ isTokenFetched: true, isLoggedIn: false });
+      this.setState({ isLoggedIn: false });
+      // SplashScreen.hide();
     }
   }
 
@@ -41,9 +41,7 @@ export default class App extends Component<Props, State> {
   }
 
   render() {
-    const { isTokenFetched, isLoggedIn } = this.state;
-
-    if (!isTokenFetched) return <SplashScreen />;
+    const { isLoggedIn } = this.state;
 
     if (!isLoggedIn) {
       return (
