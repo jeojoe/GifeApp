@@ -16,11 +16,15 @@ import configureStore from './Store';
 type Props = {
   isLoggedIn: boolean,
   setIsLoggedIn: (bool: boolean) => void,
+  setInvitationCode: (bool: boolean) => void,
 };
 
 class App extends Component<Props> {
   async componentWillMount() {
     const token = await AuthService.getToken();
+    const code = await AuthService.getInvitationCode();
+
+    if (code) this.props.setInvitationCode(code);
     if (token) {
       this.props.setIsLoggedIn(true);
       // SplashScreen.hide();
@@ -28,6 +32,7 @@ class App extends Component<Props> {
       this.props.setIsLoggedIn(false);
       // SplashScreen.hide();
     }
+
   }
 
   render() {
@@ -55,9 +60,9 @@ function mapStateToProps(state) {
   };
 }
 function mapDispatchToProps(dispatch) {
-  console.log(AuthActions);
   return {
     setIsLoggedIn: bool => dispatch(AuthActions.setIsLoggedIn(bool)),
+    setInvitationCode: code => dispatch(AuthActions.setInvitationCode(code)),
   };
 }
 

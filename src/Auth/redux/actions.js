@@ -1,3 +1,4 @@
+import { AsyncStorage } from 'react-native';
 import * as types from '../../_constants/actionTypes';
 
 export function test() {
@@ -13,9 +14,16 @@ export function setIsLoggedIn(isLoggedIn) {
   };
 }
 
-export function setIsInvited(isInvited) {
-  return {
-    type: types.SET_IS_INVITED,
-    isInvited,
+export function setInvitationCode(code) {
+  return async (dispatch) => {
+    try {
+      await AsyncStorage.setItem('@invitationcode', code);
+      dispatch({
+        type: types.SET_INVITATION_CODE,
+        code,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 }

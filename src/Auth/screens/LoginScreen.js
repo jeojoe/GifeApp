@@ -13,7 +13,7 @@ import { startLoading, endLoading } from '../../_utils/globalActions';
 type Props = {
   startLoading: () => void,
   endLoading: () => void,
-  isInvited: boolean,
+  invitationCode: string | null,
 };
 
 class LoginScreen extends Component<Props> {
@@ -23,9 +23,9 @@ class LoginScreen extends Component<Props> {
   }
 
   render() {
-    const { isInvited } = this.props;
+    const { invitationCode } = this.props;
 
-    if (!isInvited) return <InvitationScreen />;
+    if (!invitationCode) return <InvitationScreen />;
 
     return (
       <View>
@@ -42,7 +42,7 @@ class LoginScreen extends Component<Props> {
 
 function mapStateToProps(state) {
   return {
-    isInvited: state.isInvited,
+    invitationCode: state.invitationCode,
   };
 }
 function mapDispatchToProps(dispatch) {

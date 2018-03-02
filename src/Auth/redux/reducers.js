@@ -1,3 +1,4 @@
+import { AsyncStorage } from 'react-native';
 import * as types from '../../_constants/actionTypes';
 
 export const text = (state = false, action) => {
@@ -22,10 +23,10 @@ export const isLoggedIn = (state = false, action) => {
   }
 };
 
-export const isInvited = (state = false, action) => {
+export const invitationCode = (state = null, action) => {
   switch (action.type) {
-    case types.SET_IS_INVITED: {
-      return action.isInvited;
+    case types.SET_INVITATION_CODE: {
+      return action.code;
     }
     default: {
       return state;
