@@ -21,3 +21,14 @@ export const isLoggedIn = (state = false, action) => {
     }
   }
 };
+
+export const isInvited = (state = false, action) => {
+  switch (action.type) {
+    case types.SET_IS_INVITED: {
+      return action.isInvited;
+    }
+    default: {
+      return state;
+    }
+  }
+};

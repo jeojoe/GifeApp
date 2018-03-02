@@ -12,3 +12,10 @@ export function setIsLoggedIn(isLoggedIn) {
     isLoggedIn,
   };
 }
+
+export function setIsInvited(isInvited) {
+  return {
+    type: types.SET_IS_INVITED,
+    isInvited,
+  };
+}
