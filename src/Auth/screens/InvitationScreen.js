@@ -9,6 +9,7 @@ import {
   Image,
   TextInput
 } from 'react-native';
+import { Button } from '../../_components';
 import { Colors } from '../../_utils';
 import authBg1 from '../../_assets/auth-bg-1.png';
 import authBg2 from '../../_assets/auth-bg-2.png';
@@ -47,6 +48,7 @@ export default class InvitationScreen extends Component<Props, State> {
       >
         <StatusBar
           barStyle="light-content"
+          backgroundColor={Colors.main}
         />
         <View>
           <Image
@@ -63,6 +65,13 @@ export default class InvitationScreen extends Component<Props, State> {
             onChangeText={code => this.setState({ code })}
             placeholder="Invitation Code"
             placeholderTextColor={Colors.textOnLightPink}
+            keyboardType="numeric"
+            returnKeyType="done"
+            underlineColorAndroid="transparent"
+          />
+          <Button
+            text="Submit"
+            onPress={() => console.log('safjasdlfk')}
           />
         </View>
       </ImageBackground>

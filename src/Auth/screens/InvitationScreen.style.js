@@ -11,7 +11,6 @@ export default StyleSheet.create({
     height: 70,
     width: 170,
     marginBottom: 15,
-    backgroundColor: 'red',
   },
   text: {
     color: '#fff',
@@ -25,7 +24,7 @@ export default StyleSheet.create({
     fontSize: 16,
     color: '#fff',
     paddingHorizontal: 15,
-    paddingVertical: 12,
+    paddingVertical: 10,
     borderRadius: 5,
   },
 });
