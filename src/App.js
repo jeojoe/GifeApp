@@ -11,7 +11,7 @@ import {
   AuthService,
 } from './Auth';
 import { GifeStatusBar, SpinnerOverlay } from './Components';
-import configureStore from './configureStore';
+import configureStore from './Store';
 
 type Props = {
   isLoggedIn: boolean,

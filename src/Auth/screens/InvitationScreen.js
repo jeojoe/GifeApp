@@ -1,6 +1,5 @@
 // @flow
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import {
   View,
   Text,
@@ -14,7 +13,7 @@ import authBg1 from '../../_assets/auth-bg-1.png';
 import authBg2 from '../../_assets/auth-bg-2.png';
 import authBg3 from '../../_assets/auth-bg-3.png';
 import logoWhiteTrans from '../../_assets/logo-white-trans.png';
-import { startLoading, endLoading } from '../../_utils/globalActions';
+import withGlobalActions from '../../_hoc/withGlobalActions';
 
 import s from './InvitationScreen.style';
 
@@ -35,7 +34,7 @@ class InvitationScreen extends Component<Props, State> {
 
   _verifyCode = () => {
     this.props.startLoading();
-    // setTimeout(() => this.props.endLoading(), 1000);
+    setTimeout(() => this.props.endLoading(), 3000);
   }
 
   render() {
@@ -83,11 +82,12 @@ class InvitationScreen extends Component<Props, State> {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    startLoading: () => dispatch(startLoading()),
-    endLoading: () => dispatch(endLoading()),
-  };
-}
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     startLoading: () => dispatch(startLoading()),
+//     endLoading: () => dispatch(endLoading()),
+//   };
+// }
 
-export default connect(null, mapDispatchToProps)(InvitationScreen);
+// export default connect(null, mapDispatchToProps)(InvitationScreen);
+export default withGlobalActions(InvitationScreen);
