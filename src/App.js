@@ -10,21 +10,15 @@ import {
   AuthActions,
   AuthService,
 } from './Auth';
-import { GifeStatusBar } from './_components';
+import { GifeStatusBar, SpinnerOverlay } from './Components';
 import configureStore from './configureStore';
 
 type Props = {
+  isLoggedIn: boolean,
   setIsLoggedIn: (bool: boolean) => void,
 };
-type State = {
-  isInvited: boolean
-};
 
-class App extends Component<Props, State> {
-  state = {
-    isInvited: false,
-  }
-
+class App extends Component<Props> {
   async componentWillMount() {
     const token = await AuthService.getToken();
     if (token) {
@@ -36,23 +30,17 @@ class App extends Component<Props, State> {
     }
   }
 
-  setInvited = (isInvited: boolean) => {
-    this.setState({ isInvited });
-  }
-
   render() {
     const { isLoggedIn } = this.props;
 
     return (
       <View style={{ flex: 1 }}>
         <GifeStatusBar />
+        <SpinnerOverlay />
 
         {/* App content */}
         {!isLoggedIn ?
-          <LoginScreen
-            isInvited={this.state.isInvited}
-            setInvited={this.setInvited}
-          />
+          <LoginScreen />
           :
           <Text>lol hey logged in !!!</Text>
         }
@@ -67,6 +55,7 @@ function mapStateToProps(state) {
   };
 }
 function mapDispatchToProps(dispatch) {
+  console.log(AuthActions);
   return {
     setIsLoggedIn: bool => dispatch(AuthActions.setIsLoggedIn(bool)),
   };

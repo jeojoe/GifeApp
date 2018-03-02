@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   View,
   Text,
@@ -7,25 +8,34 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import { Button } from '../../_components';
-import { Colors } from '../../_utils';
+import { Button } from '../../Components';
+import Colors from '../../_utils/Colors';
 import authBg1 from '../../_assets/auth-bg-1.png';
 import authBg2 from '../../_assets/auth-bg-2.png';
 import authBg3 from '../../_assets/auth-bg-3.png';
 import logoWhiteTrans from '../../_assets/logo-white-trans.png';
+import { startLoading, endLoading } from '../../_utils/globalActions';
 
 import s from './InvitationScreen.style';
 
-type Props = {};
+type Props = {
+  startLoading: () => void,
+  endLoading: () => void,
+};
 type State = {
   code: string,
   ran: number,
 };
 
-export default class InvitationScreen extends Component<Props, State> {
+class InvitationScreen extends Component<Props, State> {
   state = {
     code: '',
     ran: Math.random(),
+  }
+
+  _verifyCode = () => {
+    this.props.startLoading();
+    // setTimeout(() => this.props.endLoading(), 1000);
   }
 
   render() {
@@ -65,10 +75,19 @@ export default class InvitationScreen extends Component<Props, State> {
           />
           <Button
             text="Submit"
-            onPress={() => console.log('safjasdlfk')}
+            onPress={this._verifyCode}
           />
         </View>
       </ImageBackground>
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    startLoading: () => dispatch(startLoading()),
+    endLoading: () => dispatch(endLoading()),
+  };
+}
+
+export default connect(null, mapDispatchToProps)(InvitationScreen);
