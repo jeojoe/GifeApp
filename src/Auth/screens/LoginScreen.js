@@ -33,7 +33,7 @@ class LoginScreen extends Component<Props> {
         <TouchableOpacity
           onPress={this._login}
         >
-          lol
+          <Text>lol</Text>
         </TouchableOpacity>
       </View>
     );

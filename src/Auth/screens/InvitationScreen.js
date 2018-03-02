@@ -32,14 +32,16 @@ class InvitationScreen extends Component<Props, State> {
 
   _verifyCode = async () => {
     this.props.startLoading();
-    try {
-      const success = await verifyInvitationCode(this.state.code);
-      if (success) this.props.setInvitationCode(this.state.code);
-      this.props.endLoading();
-    } catch (err) {
-      this.props.endLoading();
-      console.log(err);
+
+    const success = await verifyInvitationCode(this.state.code);
+    if (success) {
+      this.props.setInvitationCode(this.state.code);
+    } else {
+      // !! Dummy
+      this.props.setInvitationCode(this.state.code);
     }
+
+    this.props.endLoading();
   }
 
   render() {
@@ -76,6 +78,7 @@ class InvitationScreen extends Component<Props, State> {
             keyboardType="numeric"
             returnKeyType="done"
             underlineColorAndroid="transparent"
+            maxLength={6}
           />
           <Button
             text="Submit"
