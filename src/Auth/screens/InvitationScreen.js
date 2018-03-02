@@ -82,12 +82,4 @@ class InvitationScreen extends Component<Props, State> {
   }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     startLoading: () => dispatch(startLoading()),
-//     endLoading: () => dispatch(endLoading()),
-//   };
-// }
-
-// export default connect(null, mapDispatchToProps)(InvitationScreen);
 export default withGlobalActions(InvitationScreen);
