@@ -6,10 +6,10 @@ import {
   ImageBackground,
   StatusBar,
 } from 'react-native';
-import { Colors } from '../../_utils_/Colors';
-import authBg1 from '../../_assets_/auth-bg-1.png';
-import authBg2 from '../../_assets_/auth-bg-2.png';
-import authBg3 from '../../_assets_/auth-bg-3.png';
+import { Colors } from '../../_utils/Colors';
+import authBg1 from '../../_assets/auth-bg-1.png';
+import authBg2 from '../../_assets/auth-bg-2.png';
+import authBg3 from '../../_assets/auth-bg-3.png';
 
 type Props = {};
 type State = {

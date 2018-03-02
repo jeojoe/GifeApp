@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
-import { Colors } from '../../_utils_';
+import { Colors } from '../../_utils';
 
 const SplashScreen = () => (
   <View style={s.container} />
