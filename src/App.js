@@ -5,15 +5,13 @@ import {
   Text,
   AsyncStorage,
 } from 'react-native';
-// import SplashScreen from 'react-native-splash-screen';
-
 import {
   LoginScreen,
   AuthService,
 } from './Auth';
+import { GifeStatusBar } from './_components';
 
 type Props = {};
-
 type State = {
   isLoggedIn: boolean,
   isInvited: boolean
@@ -43,15 +41,20 @@ export default class App extends Component<Props, State> {
   render() {
     const { isLoggedIn } = this.state;
 
-    if (!isLoggedIn) {
-      return (
-        <LoginScreen
-          isInvited={this.state.isInvited}
-          setInvited={this.setInvited}
-        />
-      );
-    }
+    return (
+      <View style={{ flex: 1 }}>
+        <GifeStatusBar />
 
-    return <Text>lol hey logged in !!!</Text>;
+        {/* App content */}
+        {!isLoggedIn ?
+          <LoginScreen
+            isInvited={this.state.isInvited}
+            setInvited={this.setInvited}
+          />
+          :
+          <Text>lol hey logged in !!!</Text>
+        }
+      </View>
+    )
   }
 }

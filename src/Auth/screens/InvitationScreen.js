@@ -4,10 +4,8 @@ import {
   View,
   Text,
   ImageBackground,
-  StatusBar,
-  StyleSheet,
   Image,
-  TextInput
+  TextInput,
 } from 'react-native';
 import { Button } from '../../_components';
 import { Colors } from '../../_utils';
@@ -46,10 +44,6 @@ export default class InvitationScreen extends Component<Props, State> {
         source={bg}
         resizeMode="cover"
       >
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor={Colors.main}
-        />
         <View>
           <Image
             source={logoWhiteTrans}
