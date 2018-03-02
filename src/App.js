@@ -3,33 +3,35 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  AsyncStorage,
 } from 'react-native';
+import { connect, Provider } from 'react-redux';
 import {
   LoginScreen,
+  AuthActions,
   AuthService,
 } from './Auth';
 import { GifeStatusBar } from './_components';
+import configureStore from './configureStore';
 
-type Props = {};
+type Props = {
+  setIsLoggedIn: (bool: boolean) => void,
+};
 type State = {
-  isLoggedIn: boolean,
   isInvited: boolean
 };
 
-export default class App extends Component<Props, State> {
+class App extends Component<Props, State> {
   state = {
-    isLoggedIn: false,
     isInvited: false,
   }
 
   async componentWillMount() {
     const token = await AuthService.getToken();
     if (token) {
-      this.setState({ isLoggedIn: true });
+      this.props.setIsLoggedIn(true);
       // SplashScreen.hide();
     } else {
-      this.setState({ isLoggedIn: false });
+      this.props.setIsLoggedIn(false);
       // SplashScreen.hide();
     }
   }
@@ -39,7 +41,7 @@ export default class App extends Component<Props, State> {
   }
 
   render() {
-    const { isLoggedIn } = this.state;
+    const { isLoggedIn } = this.props;
 
     return (
       <View style={{ flex: 1 }}>
@@ -55,6 +57,28 @@ export default class App extends Component<Props, State> {
           <Text>lol hey logged in !!!</Text>
         }
       </View>
-    )
+    );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    isLoggedIn: state.isLoggedIn,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    setIsLoggedIn: bool => dispatch(AuthActions.setIsLoggedIn(bool)),
+  };
+}
+
+const HydratedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+
+// Connect to Provider
+const store = configureStore({});
+
+export default () => (
+  <Provider store={store}>
+    <HydratedApp />
+  </Provider>
+);
