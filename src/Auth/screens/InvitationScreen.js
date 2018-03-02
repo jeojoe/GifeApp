@@ -4,7 +4,9 @@ import {
   View,
   Text,
   ImageBackground,
+  StatusBar,
 } from 'react-native';
+import { Colors } from '../../_utils_/Colors';
 import authBg1 from '../../_assets_/auth-bg-1.png';
 import authBg2 from '../../_assets_/auth-bg-2.png';
 import authBg3 from '../../_assets_/auth-bg-3.png';
@@ -36,6 +38,9 @@ export default class InvitationScreen extends Component<Props, State> {
         source={bg}
         resizeMode="cover"
       >
+        <StatusBar
+          barStyle="light-content"
+        />
         <Text>invitation screen : {this.state.code}</Text>
       </ImageBackground>
     );
