@@ -1,8 +1,13 @@
 import { StyleSheet } from 'react-native';
+import Colors from '../_utils/Colors';
 
 export default StyleSheet.create({
   button: {
     height: 40,
+    shadowColor: Colors.buttonShadowOnPink,
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 1,
+    shadowRadius: 5,
   },
   gradient: {
     flex: 1,
