@@ -11,6 +11,7 @@ import { Button } from '../../Components';
 import logoWhiteTrans from '../../_assets/logo-white-trans.png';
 import { setIsInvited } from '../redux/actions';
 import InvitationScreen from './InvitationScreen';
+import { loginOAuth } from '../services';
 import { startLoading, endLoading } from '../../_utils/globalActions';
 import { NETWORK_ERR } from '../../_constants/alertMessages';
 import s from './LoginScreen.style';
@@ -29,11 +30,25 @@ class LoginScreen extends Component<Props, State> {
   state = {
     ran: Math.random(),
   }
+
   _login = async () => {
     try {
       const res = await LoginManager.logInWithReadPermissions(['public_profile', 'email']);
       if (!res.isCancelled) {
-
+        AccessToken.getCurrentAccessToken()
+          .then((data) => {
+            if (data && data.accessToken) {
+              try {
+                loginOAuth({
+                  type: 'facebook',
+                  accessToken: data.accessToken.toString(),
+                  uid: data.userID.toString(),
+                });
+              } catch (err) {
+                console.log(err);
+              }
+            }
+          });
       }
     } catch (err) {
       console.log(err);
@@ -41,6 +56,10 @@ class LoginScreen extends Component<Props, State> {
     }
 
     // setTimeout(() => this.props.endLoading(), 1000);
+  }
+
+  _loginSuccess = () => {
+
   }
 
   render() {
