@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, ImageBackground, Image, TextInput } from 'react-native';
+import { Text, ImageBackground, Image, TextInput } from 'react-native';
 import { Button } from '../../Components';
 import Colors from '../../_utils/Colors';
 import authBg1 from '../../_assets/auth-bg-1.png';
@@ -60,31 +60,29 @@ class InvitationScreen extends Component<Props, State> {
         source={bg}
         resizeMode="cover"
       >
-        <View>
-          <Image
-            source={logoWhiteTrans}
-            style={s.logo}
-            resizeMode="contain"
-          />
-          <Text style={s.text}>
-            Welcome to our beta testing. Insert invitation code and have fun traveling with GIFE!
-          </Text>
-          <TextInput
-            style={s.input}
-            value={this.state.code}
-            onChangeText={code => this.setState({ code })}
-            placeholder="Invitation Code"
-            placeholderTextColor={Colors.textOnLightPink}
-            keyboardType="numeric"
-            returnKeyType="done"
-            underlineColorAndroid="transparent"
-            maxLength={6}
-          />
-          <Button
-            text="Submit"
-            onPress={this._verifyCode}
-          />
-        </View>
+        <Image
+          source={logoWhiteTrans}
+          style={s.logo}
+          resizeMode="contain"
+        />
+        <Text style={s.text}>
+          Welcome to our beta testing. Insert invitation code and have fun traveling with GIFE!
+        </Text>
+        <TextInput
+          style={s.input}
+          value={this.state.code}
+          onChangeText={code => this.setState({ code })}
+          placeholder="Invitation Code"
+          placeholderTextColor={Colors.textOnLightPink}
+          keyboardType="numeric"
+          returnKeyType="done"
+          underlineColorAndroid="transparent"
+          maxLength={6}
+        />
+        <Button
+          text="Submit"
+          onPress={this._verifyCode}
+        />
       </ImageBackground>
     );
   }
