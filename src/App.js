@@ -13,15 +13,19 @@ import {
 import { GifeStatusBar, SpinnerOverlay } from './Components';
 import configureStore from './Store';
 
-const FBSDK = require('react-native-fbsdk');
-
 type Props = {
   isLoggedIn: boolean,
   setIsLoggedIn: (bool: boolean) => void,
   setInvitationCode: (bool: boolean) => void,
 };
+type State = {
+  fetchingToken: boolean,
+};
 
-class App extends Component<Props> {
+class App extends Component<Props, State> {
+  state = {
+    fetchingToken: true,
+  }
   async componentWillMount() {
     const token = await AuthService.getToken();
     const code = await AuthService.getInvitationCode();
@@ -35,10 +39,14 @@ class App extends Component<Props> {
       // SplashScreen.hide();
     }
 
+    this.setState({ fetchingToken: false });
   }
 
   render() {
+    const { fetchingToken } = this.state;
     const { isLoggedIn } = this.props;
+
+    if (fetchingToken) return null;
 
     return (
       <View style={{ flex: 1 }}>
