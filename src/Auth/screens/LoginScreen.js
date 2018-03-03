@@ -9,10 +9,10 @@ import authBg2 from '../../_assets/auth-bg-2.png';
 import authBg3 from '../../_assets/auth-bg-3.png';
 import { Button } from '../../Components';
 import logoWhiteTrans from '../../_assets/logo-white-trans.png';
-import { setIsInvited } from '../redux/actions';
+import * as Actions from '../redux/actions';
 import InvitationScreen from './InvitationScreen';
 import { loginOAuth } from '../services';
-import { startLoading, endLoading } from '../../_utils/globalActions';
+import withGlobalActions from '../../_hoc/withGlobalActions';
 import { NETWORK_ERR } from '../../_constants/alertMessages';
 import s from './LoginScreen.style';
 
@@ -20,6 +20,7 @@ import s from './LoginScreen.style';
 type Props = {
   startLoading: () => void,
   endLoading: () => void,
+  setIsLoggedIn: () => void,
   invitationCode: string | null,
 };
 type State = {
@@ -35,20 +36,24 @@ class LoginScreen extends Component<Props, State> {
     try {
       const res = await LoginManager.logInWithReadPermissions(['public_profile', 'email']);
       if (!res.isCancelled) {
+        this.props.startLoading();
         AccessToken.getCurrentAccessToken()
-          .then((data) => {
+          .then(async (data) => {
             if (data && data.accessToken) {
               try {
-                loginOAuth({
+                await loginOAuth({
                   type: 'facebook',
                   accessToken: data.accessToken.toString(),
                   uid: data.userID.toString(),
                 });
+                this._loginSuccess('facebook');
               } catch (err) {
                 console.log(err);
               }
             }
-          });
+          })
+          .catch(err => console.log(err))
+          .finally(() => this.props.endLoading());
       }
     } catch (err) {
       console.log(err);
@@ -58,8 +63,11 @@ class LoginScreen extends Component<Props, State> {
     // setTimeout(() => this.props.endLoading(), 1000);
   }
 
-  _loginSuccess = () => {
-
+  _loginSuccess = (type: string) => {
+    if (type === 'facebook') {
+      console.log('fbbb');
+    }
+    this.props.setIsLoggedIn(true);
   }
 
   render() {
@@ -111,10 +119,9 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
   return {
-    setIsInvited: bool => dispatch(setIsInvited(bool)),
-    startLoading: () => dispatch(startLoading()),
-    endLoading: () => dispatch(endLoading()),
+    setIsInvited: bool => dispatch(Actions.setIsInvited(bool)),
+    setIsLoggedIn: bool => dispatch(Actions.setIsLoggedIn(bool)),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(withGlobalActions(LoginScreen));
