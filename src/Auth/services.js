@@ -19,6 +19,16 @@ export async function setToken(token) {
   }
 }
 
+export async function deleteToken() {
+  try {
+    await AsyncStorage.removeItem('@token');
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}
+
 export async function getInvitationCode() {
   const code = await AsyncStorage.getItem('@invitationcode');
   return code;
