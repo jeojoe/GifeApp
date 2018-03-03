@@ -49,7 +49,10 @@ class LoginScreen extends Component<Props, State> {
         source={bg}
         resizeMode="cover"
       >
-        <Modal visible={!invitationCode} animationType="fade">
+        <Modal
+          visible={!invitationCode} animationType="fade"
+          onRequestClose={() => console.log('close')}
+        >
           <InvitationScreen />
         </Modal>
         <Image
@@ -63,6 +66,7 @@ class LoginScreen extends Component<Props, State> {
         <Button
           text="ดำเนินการต่อด้วย Facebook"
           onPress={this._login}
+          bgColor="white"
         />
       </ImageBackground>
     );

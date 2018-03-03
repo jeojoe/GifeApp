@@ -11,7 +11,6 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    color: '#fff',
     fontWeight: 'bold',
     fontSize: 16,
   },
