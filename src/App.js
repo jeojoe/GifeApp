@@ -13,6 +13,8 @@ import {
 import { GifeStatusBar, SpinnerOverlay } from './Components';
 import configureStore from './Store';
 
+const FBSDK = require('react-native-fbsdk');
+
 type Props = {
   isLoggedIn: boolean,
   setIsLoggedIn: (bool: boolean) => void,
