@@ -23,7 +23,7 @@ const Button = (props: Props) => {
       <LinearGradient
         colors={[Colors.buttonLeft, Colors.buttonRight]}
         style={s.gradient}
-        start={{x: 0, y: 0.5}} end={{x: 1, y: 0.5}}
+        start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }}
       >
         <Text style={s.text}>{props.text}</Text>
       </LinearGradient>
