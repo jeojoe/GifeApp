@@ -4,6 +4,11 @@ import { GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
 import * as API from '../_utils/apiCaller';
 import { NETWORK_ERR } from '../_constants/alertMessages';
 
+export function resetTokenAndCode() {
+  deleteToken();
+  deleteInvitationCode();
+}
+
 export async function getToken() {
   const token = await AsyncStorage.getItem('@token');
   return token;
@@ -32,6 +37,16 @@ export async function deleteToken() {
 export async function getInvitationCode() {
   const code = await AsyncStorage.getItem('@invitationcode');
   return code;
+}
+
+export async function deleteInvitationCode() {
+  try {
+    await AsyncStorage.removeItem('@invitationcode');
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
 }
 
 export async function verifyInvitationCode(code) {
