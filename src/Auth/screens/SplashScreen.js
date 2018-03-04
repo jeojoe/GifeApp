@@ -3,9 +3,8 @@ import React from 'react';
 import {
   View,
   StyleSheet,
-  Text,
 } from 'react-native';
-import Colors from '../../_utils/Colors';
+import { Colors } from '../../_utils';
 
 const SplashScreen = () => (
   <View style={s.container} />

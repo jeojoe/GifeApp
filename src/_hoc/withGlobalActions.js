@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as GlobalActions from '../_utils/globalActions';
+import { GlobalActions } from '../_utils';
 
 export default function withGlobalActions(Component) {
   function mapDispatchToProps(dispatch) {

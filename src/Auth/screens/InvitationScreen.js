@@ -2,15 +2,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Text, ImageBackground, Image, TextInput } from 'react-native';
+
+import { authBg1, authBg2, authBg3, logoWhiteTrans } from '../../_assets';
+import { withGlobalActions } from '../../_hoc';
+import { Colors } from '../../_utils';
+import { AuthServices, AuthActions } from '../../Auth';
 import { Button } from '../../Components';
-import Colors from '../../_utils/Colors';
-import authBg1 from '../../_assets/auth-bg-1.png';
-import authBg2 from '../../_assets/auth-bg-2.png';
-import authBg3 from '../../_assets/auth-bg-3.png';
-import logoWhiteTrans from '../../_assets/logo-white-trans.png';
-import withGlobalActions from '../../_hoc/withGlobalActions';
-import { verifyInvitationCode } from '../services';
-import { setInvitationCode } from '../redux/actions';
 
 import s from './InvitationScreen.style';
 
@@ -33,7 +30,7 @@ class InvitationScreen extends Component<Props, State> {
   _verifyCode = async () => {
     this.props.startLoading();
 
-    const success = await verifyInvitationCode(this.state.code);
+    const success = await AuthServices.verifyInvitationCode(this.state.code);
     if (success) {
       this.props.setInvitationCode(this.state.code);
     } else {
@@ -90,7 +87,7 @@ class InvitationScreen extends Component<Props, State> {
 
 function mapDispatchToProps(dispatch) {
   return {
-    setInvitationCode: code => dispatch(setInvitationCode(code)),
+    setInvitationCode: code => dispatch(AuthActions.setInvitationCode(code)),
   };
 }
 

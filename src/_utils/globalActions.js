@@ -1,15 +1,15 @@
-import * as types from '../_constants/actionTypes';
+import { actionTypes } from '../_constants';
 
 export function startLoading() {
   return {
-    type: types.START_LOADING,
+    type: actionTypes.START_LOADING,
     isLoading: true,
   };
 }
 
 export function endLoading() {
   return {
-    type: types.END_LOADING,
+    type: actionTypes.END_LOADING,
     isLoading: false,
   };
 }

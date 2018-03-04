@@ -1,18 +1,18 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import * as types from './_constants/actionTypes';
 
-import * as authReducers from './Auth/redux/reducers';
+import { actionTypes } from './_constants';
+import { AuthReducers } from './Auth';
 
 // Reducers for global use
 const globalReducers = {
   isLoading: (state = false, action) => {
     switch (action.type) {
-      case types.START_LOADING: {
+      case actionTypes.START_LOADING: {
         return true;
       }
-      case types.END_LOADING: {
+      case actionTypes.END_LOADING: {
         return false;
       }
       default: {
@@ -24,7 +24,7 @@ const globalReducers = {
 
 const middlewares = [thunk, logger];
 const reducers = combineReducers({
-  ...authReducers,
+  ...AuthReducers,
   ...globalReducers,
 });
 

@@ -1,10 +1,10 @@
 import SplashScreen from './screens/SplashScreen';
 import LoginScreen from './screens/LoginScreen';
 
-import * as AuthService from './services';
+import * as AuthServices from './services';
 
-import * as AuthActions from './redux/actions';
-import * as AuthReducers from './redux/reducers';
+import * as AuthActions from './actions';
+import * as AuthReducers from './reducers';
 
 export {
   // Actions
@@ -14,5 +14,5 @@ export {
   SplashScreen,
   LoginScreen,
   // Services
-  AuthService,
+  AuthServices,
 };

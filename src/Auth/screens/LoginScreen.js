@@ -2,25 +2,20 @@
 import React, { Component } from 'react';
 import { Text, Modal, ImageBackground, Image, Alert } from 'react-native';
 import { connect } from 'react-redux';
-import FBSDK, { LoginManager, AccessToken } from 'react-native-fbsdk';
+import FBSDK, { LoginManager, AccessToken } from 'react-native-fbsdk'; // eslint-disable-line
 
-import authBg1 from '../../_assets/auth-bg-1.png';
-import authBg2 from '../../_assets/auth-bg-2.png';
-import authBg3 from '../../_assets/auth-bg-3.png';
+import { authBg1, authBg2, authBg3, logoWhiteTrans } from '../../_assets';
+import { alertMessages } from '../../_constants';
+import { withGlobalActions } from '../../_hoc';
+import { AuthActions, InvitationScreen, AuthServices } from '../../Auth';
 import { Button } from '../../Components';
-import logoWhiteTrans from '../../_assets/logo-white-trans.png';
-import * as Actions from '../redux/actions';
-import InvitationScreen from './InvitationScreen';
-import { loginOAuth } from '../services';
-import withGlobalActions from '../../_hoc/withGlobalActions';
-import { NETWORK_ERR } from '../../_constants/alertMessages';
 import s from './LoginScreen.style';
 
 
 type Props = {
   startLoading: () => void,
   endLoading: () => void,
-  setIsLoggedIn: () => void,
+  setIsLoggedIn: (bool: boolean) => void,
   invitationCode: string | null,
 };
 type State = {
@@ -41,7 +36,7 @@ class LoginScreen extends Component<Props, State> {
           .then(async (data) => {
             if (data && data.accessToken) {
               try {
-                await loginOAuth({
+                await AuthServices.loginOAuth({
                   type: 'facebook',
                   accessToken: data.accessToken.toString(),
                   uid: data.userID.toString(),
@@ -57,7 +52,7 @@ class LoginScreen extends Component<Props, State> {
       }
     } catch (err) {
       console.log(err);
-      Alert.alert(NETWORK_ERR);
+      Alert.alert(alertMessages.NETWORK_ERR);
     }
 
     // setTimeout(() => this.props.endLoading(), 1000);
@@ -119,8 +114,8 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
   return {
-    setIsInvited: bool => dispatch(Actions.setIsInvited(bool)),
-    setIsLoggedIn: bool => dispatch(Actions.setIsLoggedIn(bool)),
+    setIsInvited: bool => dispatch(AuthActions.setIsInvited(bool)),
+    setIsLoggedIn: bool => dispatch(AuthActions.setIsLoggedIn(bool)),
   };
 }
 

@@ -1,12 +1,12 @@
 // @flow
 import React from 'react';
 import {
-  View,
   Text,
   TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Colors from '../_utils/Colors';
+
+import { Colors } from '../_utils';
 import s from './Button.style';
 
 type Props = {
@@ -30,7 +30,7 @@ const Button = (props: Props) => {
       onPress={() => props.onPress()}
       style={[
         s.button,
-        props.height && { height: props.height }
+        props.height && { height: props.height },
       ]}
     >
       <LinearGradient

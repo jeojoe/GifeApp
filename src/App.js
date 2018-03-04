@@ -1,15 +1,8 @@
 // @flow
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
+import { View, Text } from 'react-native';
 import { connect, Provider } from 'react-redux';
-import {
-  LoginScreen,
-  AuthActions,
-  AuthService,
-} from './Auth';
+import { LoginScreen, AuthActions, AuthService } from './Auth';
 import { GifeStatusBar, SpinnerOverlay } from './Components';
 import configureStore from './Store';
 

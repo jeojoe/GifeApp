@@ -1,6 +1,6 @@
 // @flow
 import axios from 'axios';
-import Config from '../_constants/tempConfig';
+import { Config } from '../_constants';
 
 export function mock() {
   return axios.get('http://www.mocky.io/v2/5a996cbf2e0000e331553680');

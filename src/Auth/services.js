@@ -1,8 +1,7 @@
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
 import { GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
-import * as API from '../_utils/apiCaller';
-import { NETWORK_ERR } from '../_constants/alertMessages';
+import { alertMessages } from '../_constants';
 
 export function resetTokenAndCode() {
   deleteToken();
@@ -67,7 +66,7 @@ export function loginOAuth({ type, accessToken, uid, email }) {
       { accessToken },
       (err, data) => {
         if (err) {
-          alert(NETWORK_ERR);
+          alert(alertMessages.NETWORK_ERR);
           reject(err);
         }
 

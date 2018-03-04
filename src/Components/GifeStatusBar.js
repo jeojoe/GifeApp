@@ -2,7 +2,8 @@ import React from 'react';
 import {
   StatusBar,
 } from 'react-native';
-import Colors from '../_utils/Colors';
+
+import { Colors } from '../_utils';
 
 const GifeStatusBar = () => (
   <StatusBar
