@@ -10,3 +10,4 @@
     - import .. from '../**_assets**'
     - import .. from '../**_hoc**' (_a before _h)
     - import .. from '../**Auth**' (_ before A)
+1. Always import from _endpoint_, not directly from filename.
