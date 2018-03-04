@@ -6,3 +6,7 @@
     - act as interface (api)
 1. Always put state in redux
 1. Global reducers -> code it directly in configureStore
+1. Imports should be in alphabetical order of folder module eg.
+    - import .. from '../**_assets**'
+    - import .. from '../**_hoc**' (_a before _h)
+    - import .. from '../**Auth**' (_ before A)
