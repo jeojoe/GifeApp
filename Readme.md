@@ -1,4 +1,6 @@
-# Code style consensus
+# GifeApp
+
+## Code style consensus
 
 1. Module folder start with capital letter, global folder start with _
     - encapsulation of logic
@@ -11,3 +13,10 @@
     - import .. from '../**_hoc**' (_a before _h)
     - import .. from '../**Auth**' (_ before A)
 1. Always import from _endpoint_, not directly from filename.
+
+## How to run
+
+1. clone ofc + make sure you followed this [guide](https://facebook.github.io/react-native/docs/getting-started.html) (set up with native code)
+1. run `yarn`
+1. run `make dev-ios` or `make dev-android`
+1. lol
