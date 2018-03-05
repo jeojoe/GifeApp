@@ -2,7 +2,9 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect, Provider } from 'react-redux';
+
 import { LoginScreen, AuthActions, AuthServices } from './Auth';
+import { RootStack } from './Navigators';
 import { GifeStatusBar, SpinnerOverlay } from './Components';
 import configureStore from './Store';
 
@@ -51,7 +53,7 @@ class App extends Component<Props, State> {
         {!isLoggedIn ?
           <LoginScreen />
           :
-          <Text>lol hey logged in !!!</Text>
+          <RootStack />
         }
       </View>
     );
