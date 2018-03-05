@@ -1,13 +1,12 @@
 // @flow
 import React, { Component } from 'react';
 import { Text, Modal, ImageBackground, Image, Alert } from 'react-native';
-import { connect } from 'react-redux';
 import FBSDK, { LoginManager, AccessToken } from 'react-native-fbsdk'; // eslint-disable-line
 
 import { authBg1, authBg2, authBg3, logoWhiteTrans } from '../../_assets';
 import { alertMessages } from '../../_constants';
-import { withGlobalActions } from '../../_hoc';
-import { AuthActions, InvitationScreen, AuthServices } from '../../Auth';
+import { withGlobalActions, withAuthRedux } from '../../_hoc';
+import { InvitationScreen, AuthServices } from '../../Auth';
 import { Button } from '../../Components';
 import s from './LoginScreen.style';
 
@@ -54,8 +53,6 @@ class LoginScreen extends Component<Props, State> {
       console.log(err);
       Alert.alert(alertMessages.NETWORK_ERR);
     }
-
-    // setTimeout(() => this.props.endLoading(), 1000);
   }
 
   _loginSuccess = (type: string) => {
@@ -107,16 +104,4 @@ class LoginScreen extends Component<Props, State> {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    invitationCode: state.invitationCode,
-  };
-}
-function mapDispatchToProps(dispatch) {
-  return {
-    setIsInvited: bool => dispatch(AuthActions.setIsInvited(bool)),
-    setIsLoggedIn: bool => dispatch(AuthActions.setIsLoggedIn(bool)),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(withGlobalActions(LoginScreen));
+export default withAuthRedux(withGlobalActions(LoginScreen));

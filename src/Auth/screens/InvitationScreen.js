@@ -1,12 +1,11 @@
 // @flow
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Text, ImageBackground, Image, TextInput } from 'react-native';
 
 import { authBg1, authBg2, authBg3, logoWhiteTrans } from '../../_assets';
-import { withGlobalActions } from '../../_hoc';
+import { withGlobalActions, withAuthRedux } from '../../_hoc';
 import { Colors } from '../../_utils';
-import { AuthServices, AuthActions } from '../../Auth';
+import { AuthServices } from '../../Auth';
 import { Button } from '../../Components';
 
 import s from './InvitationScreen.style';
@@ -85,10 +84,4 @@ class InvitationScreen extends Component<Props, State> {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    setInvitationCode: code => dispatch(AuthActions.setInvitationCode(code)),
-  };
-}
-
-export default connect(null, mapDispatchToProps)(withGlobalActions(InvitationScreen));
+export default withAuthRedux(withGlobalActions(InvitationScreen));

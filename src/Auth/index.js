@@ -1,5 +1,6 @@
 import SplashScreen from './screens/SplashScreen';
 import LoginScreen from './screens/LoginScreen';
+import InvitationScreen from './screens/InvitationScreen';
 
 import * as AuthServices from './services';
 
@@ -13,6 +14,7 @@ export {
   // Screens
   SplashScreen,
   LoginScreen,
+  InvitationScreen,
   // Services
   AuthServices,
 };

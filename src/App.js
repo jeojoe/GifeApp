@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect, Provider } from 'react-redux';
-import { LoginScreen, AuthActions, AuthService } from './Auth';
+import { LoginScreen, AuthActions, AuthServices } from './Auth';
 import { GifeStatusBar, SpinnerOverlay } from './Components';
 import configureStore from './Store';
 
@@ -20,9 +20,9 @@ class App extends Component<Props, State> {
     fetchingToken: true,
   }
   async componentWillMount() {
-    // AuthService.resetTokenAndCode();
-    const token = await AuthService.getToken();
-    const code = await AuthService.getInvitationCode();
+    // AuthServices.resetTokenAndCode();
+    const token = await AuthServices.getToken();
+    const code = await AuthServices.getInvitationCode();
 
     if (code) this.props.setInvitationCode(code);
     if (token) {
