@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import { compose } from 'redux';
 import { Text, ImageBackground, Image, TextInput } from 'react-native';
 
 import { authBg1, authBg2, authBg3, logoWhiteTrans } from '../../_assets';
@@ -84,4 +85,7 @@ class InvitationScreen extends Component<Props, State> {
   }
 }
 
-export default withAuthRedux(withGlobalActions(InvitationScreen));
+export default compose(
+  withAuthRedux,
+  withGlobalActions,
+)(InvitationScreen);

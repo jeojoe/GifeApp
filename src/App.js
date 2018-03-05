@@ -20,7 +20,7 @@ class App extends Component<Props, State> {
     fetchingToken: true,
   }
   async componentWillMount() {
-    // AuthServices.resetTokenAndCode();
+    AuthServices.resetTokenAndCode();
     const token = await AuthServices.getToken();
     const code = await AuthServices.getInvitationCode();
 

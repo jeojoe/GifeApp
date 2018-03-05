@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import { compose } from 'redux';
 import { Text, Modal, ImageBackground, Image, Alert } from 'react-native';
 import FBSDK, { LoginManager, AccessToken } from 'react-native-fbsdk'; // eslint-disable-line
 
@@ -104,4 +105,7 @@ class LoginScreen extends Component<Props, State> {
   }
 }
 
-export default withAuthRedux(withGlobalActions(LoginScreen));
+export default compose(
+  withAuthRedux,
+  withGlobalActions,
+)(LoginScreen);
