@@ -1,6 +1,7 @@
 import { actionTypes } from '../_constants';
 
 export function startLoading() {
+  console.log('start loading!!');
   return {
     type: actionTypes.START_LOADING,
     isLoading: true,

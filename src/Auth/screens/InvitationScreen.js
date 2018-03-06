@@ -35,13 +35,10 @@ class InvitationScreen extends Component<Props, State> {
     if (success) {
       this.props.setInvitationCode(this.state.code);
     } else {
-      // !! Dummy
-      this.props.setInvitationCode(this.state.code);
-
-      // alert(alertMessages.INVITATION_CODE_REJECTED);
+      setTimeout(() => alert(alertMessages.INVITATION_CODE_REJECTED), 500);
     }
 
-    setTimeout(() => this.props.endLoading(), 500);
+    this.props.endLoading();
   }
 
   render() {

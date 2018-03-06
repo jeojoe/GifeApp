@@ -52,11 +52,7 @@ export async function deleteInvitationCode() {
 
 export async function verifyInvitationCode(code) {
   try {
-    // const res = await API.get(`api/auth/invitation?code=${code}`);
-    const res = await API.mock();
-    // const res = await axios.get('api/auth/invitation', {
-    //   body: { code },
-    // });
+    const res = await API.get(`api/auth/invitation?code=${code}`);
     console.log(res);
     return true;
   } catch (err) {

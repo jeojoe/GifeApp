@@ -94,7 +94,7 @@ class LoginScreen extends Component<Props, State> {
           resizeMode="contain"
         />
         <Text style={[s.text, { marginBottom: 70 }]}>
-          ไปเที่ยวแล้วได้รางวัล!
+          แอพที่ทำให้คุณเที่ยวแล้วได้รางวัล!
         </Text>
         <Button
           text="ดำเนินการต่อด้วย Facebook"
