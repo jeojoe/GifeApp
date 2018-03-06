@@ -65,16 +65,21 @@ export function loginOAuth({ type, accessToken, uid, email }) {
     const infoRequest = new GraphRequest(
       '/me?fields=email',
       { accessToken },
-      (err, data) => {
+      async (err, data) => {
         if (err) {
           alert(alertMessages.NETWORK_ERR);
           reject(err);
         }
 
         if (data && data.email) {
-          // const res = await API.mock();
-          setToken('dummytoken');
-          resolve();
+          const { data } = await API.post('api/auth/facebook', {
+            accessToken, uid, email,
+          });
+          if (data && data.token) {
+            setToken(data.token);
+            resolve();
+          }
+          reject(new Error('Internal Error! : No data or token'));
         }
       },
     );
