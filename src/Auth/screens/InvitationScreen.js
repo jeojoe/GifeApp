@@ -4,6 +4,7 @@ import { compose } from 'redux';
 import { Text, ImageBackground, Image, TextInput } from 'react-native';
 
 import { authBg1, authBg2, authBg3, logoWhiteTrans } from '../../_assets';
+import { alertMessages } from '../../_constants';
 import { withGlobalActions, withAuthRedux } from '../../_hoc';
 import { Colors } from '../../_utils';
 import { AuthServices } from '../../Auth';
@@ -36,9 +37,11 @@ class InvitationScreen extends Component<Props, State> {
     } else {
       // !! Dummy
       this.props.setInvitationCode(this.state.code);
+
+      // alert(alertMessages.INVITATION_CODE_REJECTED);
     }
 
-    this.props.endLoading();
+    setTimeout(() => this.props.endLoading(), 500);
   }
 
   render() {

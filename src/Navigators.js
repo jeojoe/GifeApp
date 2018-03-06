@@ -1,4 +1,4 @@
-import { TabNavigator, StackNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator, TabBarBottom } from 'react-navigation';
 
 import * as Explore from './Explore';
 import * as Gife from './Gife';
@@ -16,9 +16,14 @@ export const MainTab = TabNavigator({
   RewardTab: {
     screen: Reward.RewardTabScreen,
   },
-  Profile: {
+  ProfileTab: {
     screen: Profile.ProfileTabScreen,
   },
+}, {
+  tabBarComponent: TabBarBottom,
+  tabBarPosition: 'bottom',
+  swipeEnabled: false,
+  animationEnabled: false,
 });
 
 export const RootStack = StackNavigator({
@@ -28,4 +33,6 @@ export const RootStack = StackNavigator({
   Challenge: {
     screen: Challenge.ChallengeScreen,
   },
+}, {
+  headerMode: 'none',
 });

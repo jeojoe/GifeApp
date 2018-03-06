@@ -5,7 +5,7 @@ import { connect, Provider } from 'react-redux';
 
 import { LoginScreen, AuthActions, AuthServices } from './Auth';
 import { RootStack } from './Navigators';
-import { GifeStatusBar, SpinnerOverlay } from './Components';
+import { SpinnerOverlay } from './Components';
 import configureStore from './Store';
 
 type Props = {
@@ -22,7 +22,7 @@ class App extends Component<Props, State> {
     fetchingToken: true,
   }
   async componentWillMount() {
-    // AuthServices.resetTokenAndCode();
+    AuthServices.resetTokenAndCode();
     const token = await AuthServices.getToken();
     const code = await AuthServices.getInvitationCode();
 
@@ -46,7 +46,6 @@ class App extends Component<Props, State> {
 
     return (
       <View style={{ flex: 1 }}>
-        <GifeStatusBar />
         <SpinnerOverlay />
 
         {/* App content */}

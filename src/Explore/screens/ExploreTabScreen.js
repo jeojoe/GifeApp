@@ -1,4 +1,12 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, ScrollView } from 'react-native';
 
-export default () => <View><Text>Explore Screen</Text></View>;
+export default class ExploreTabScreen extends Component {
+  render() {
+    return (
+      <View>
+        <Text>ภารกิจโดดเด่นและแนะนำ</Text>
+      </View>
+    );
+  }
+}

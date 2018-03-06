@@ -1,6 +1,8 @@
 import { AsyncStorage } from 'react-native';
-import axios from 'axios';
 import { GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
+
+import axios from 'axios';
+import { API } from '../_utils';
 import { alertMessages } from '../_constants';
 
 export function resetTokenAndCode() {
@@ -50,11 +52,14 @@ export async function deleteInvitationCode() {
 
 export async function verifyInvitationCode(code) {
   try {
-    const res = await axios.get('http://www.mocky.io/v2/5a996cbf2e0000e331553680');
+    // const res = await API.get(`api/auth/invitation?code=${code}`);
+    const res = await API.mock();
+    // const res = await axios.get('api/auth/invitation', {
+    //   body: { code },
+    // });
     console.log(res);
     return true;
   } catch (err) {
-    console.log(err);
     return false;
   }
 }

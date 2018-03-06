@@ -8,7 +8,7 @@ import { authBg1, authBg2, authBg3, logoWhiteTrans } from '../../_assets';
 import { alertMessages } from '../../_constants';
 import { withGlobalActions, withAuthRedux } from '../../_hoc';
 import { InvitationScreen, AuthServices } from '../../Auth';
-import { Button } from '../../Components';
+import { Button, GifeStatusBar } from '../../Components';
 import s from './LoginScreen.style';
 
 
@@ -81,6 +81,7 @@ class LoginScreen extends Component<Props, State> {
         source={bg}
         resizeMode="cover"
       >
+        <GifeStatusBar />
         <Modal
           visible={!invitationCode} animationType="fade"
           onRequestClose={() => console.log('close')}
