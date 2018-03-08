@@ -112,7 +112,7 @@ const challenges = [{
   challenge_goal_caption: 'ไปเที่ยวให้ครับ 3 ที่นี้ภายใน 1 วัน',
   challenge_places: places,
   challenge_start_data: new Date(),
-  challenge_end_date: new Date(Date.now + 1),
+  challenge_end_date: (new Date()).setDate((new Date()).getDate() + 7),
   challenge_total_rating: 0,
   challenge_location_label: 'เยาวราช, กรุงเทพ',
 }, {
@@ -125,7 +125,7 @@ const challenges = [{
   challenge_goal_caption: 'ไปเที่ยวให้ครบ 3 ที่นี้ภายใน 7 วัน',
   challenge_places: places,
   challenge_start_data: new Date(),
-  challenge_end_date: new Date(Date.now + 7),
+  challenge_end_date: (new Date()).setDate((new Date()).getDate() + 7),
   challenge_total_rating: 4.7,
   challenge_location_label: 'ทะเลอ่าวไทย, ภาคใต้',
 }, {
@@ -138,7 +138,7 @@ const challenges = [{
   challenge_goal_caption: 'ไปเที่ยวให้ครับ 3 ที่นี้ภายใน 1 วัน',
   challenge_places: places,
   challenge_start_data: new Date(),
-  challenge_end_date: new Date(Date.now + 1),
+  challenge_end_date: (new Date()).setDate((new Date()).getDate() + 7),
   challenge_total_rating: 5,
   challenge_location_label: 'เชียงใหม่',
 }];
