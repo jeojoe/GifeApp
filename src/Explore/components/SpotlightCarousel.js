@@ -17,6 +17,7 @@ class SpotlightCarousel extends Component<Props> {
       <ChallengeCardJumbo
         title={item.challenge_name}
         picture={item.challenge_picture}
+        endDate={item.challenge_end_date}
       />
     );
   }
