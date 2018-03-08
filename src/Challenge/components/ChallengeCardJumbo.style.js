@@ -9,6 +9,8 @@ export default StyleSheet.create({
   imageWrapper: {
     height: cardHeight,
     width: cardWidth,
+    borderRadius: 10,
+    overflow: 'hidden',
   },
   title: {
     backgroundColor: 'transparent',
