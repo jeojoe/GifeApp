@@ -16,7 +16,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     paddingHorizontal: 32,
     fontSize: 22,
-    marginBottom: 15,
+    marginBottom: 18,
   },
   headerFront: {
     color: Colors.textGrey,

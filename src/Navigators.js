@@ -9,6 +9,7 @@ import * as Challenge from './Challenge';
 export const MainTab = TabNavigator({
   ExploreTab: {
     screen: Explore.ExploreTabScreen,
+
   },
   GifeTab: {
     screen: Gife.GifeTabScreen,
@@ -33,6 +34,4 @@ export const RootStack = StackNavigator({
   Challenge: {
     screen: Challenge.ChallengeScreen,
   },
-}, {
-  headerMode: 'none',
 });

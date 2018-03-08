@@ -1,4 +1,15 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-export default () => <Text>challenge screen</Text>;
+const ChallengeScreen = () => (
+  <Text>challenge screen</Text>
+);
+
+ChallengeScreen.navigationOptions = {
+  headerBackTitle: 'Back',
+  headerTintColor: 'red',
+  headerTitle: 'what',
+  headerTransparent: true,
+};
+
+export default ChallengeScreen;
