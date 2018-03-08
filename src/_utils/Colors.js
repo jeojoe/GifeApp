@@ -10,4 +10,7 @@ export default {
   buttonLeft: '#DF0084',
   buttonRight: '#BB004D',
   buttonShadowOnPink: 'rgba(127,0,51,0.5)',
+
+  // text
+  textGrey: '#525252',
 };
