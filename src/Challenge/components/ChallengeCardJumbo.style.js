@@ -35,6 +35,11 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 24,
   },
+  footerWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  // Reward
   rewardWrapper: {
     height: 47,
     justifyContent: 'center',
