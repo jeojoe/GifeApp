@@ -4,7 +4,7 @@ import Colors from './colors';
 
 export default StyleSheet.create({
   wrapper: {
-    paddingTop: 30,
+    paddingTop: 20,
     paddingHorizontal: sConst.horizontalPad,
     backgroundColor: '#fff',
     flex: 1,

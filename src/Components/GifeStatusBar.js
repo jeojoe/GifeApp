@@ -5,10 +5,10 @@ import {
 
 import { Colors } from '../_utils';
 
-const GifeStatusBar = () => (
+const GifeStatusBar = ({ white }) => (
   <StatusBar
-    barStyle="light-content"
-    backgroundColor={Colors.main}
+    barStyle={white ? 'dark-content' : 'light-content'}
+    backgroundColor={white ? '#fff' : Colors.main}
   />
 );
 
