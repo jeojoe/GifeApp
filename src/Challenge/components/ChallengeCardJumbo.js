@@ -16,9 +16,11 @@ const ChallengeCardJumbo = (props: Props) => (
     style={s.imageWrapper}
     source={{ uri: props.picture }}
   >
-    <TimeLeftLabel
-      endDate={props.endDate}
-    />
+    <View style={s.timeLeft}>
+      <TimeLeftLabel
+        endDate={props.endDate}
+      />
+    </View>
     <Text style={s.title}>
       {props.title}
     </Text>

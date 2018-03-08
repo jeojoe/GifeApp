@@ -15,4 +15,9 @@ export default StyleSheet.create({
   title: {
     backgroundColor: 'transparent',
   },
+  timeLeft: {
+    position: 'absolute',
+    right: 15,
+    top: 12,
+  },
 });
