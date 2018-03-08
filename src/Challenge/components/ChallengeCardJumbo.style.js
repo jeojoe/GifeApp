@@ -25,7 +25,7 @@ export default StyleSheet.create({
   },
   // Header
   headerWrapper: {
-    paddingBottom: 10,
+    paddingBottom: 12,
     paddingTop: 72,
     paddingHorizontal: innerHorizontalPad,
   },
@@ -34,6 +34,7 @@ export default StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 24,
+    marginBottom: 5,
   },
   footerWrapper: {
     flexDirection: 'row',
