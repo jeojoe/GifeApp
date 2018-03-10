@@ -19,6 +19,7 @@ class SpotlightCarousel extends Component<Props> {
         picture={item.challenge_picture}
         endDate={item.challenge_end_date}
         locationLabel={item.challenge_location_label}
+        rating={item.challenge_total_rating}
       />
     );
   }

@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import TimeLeftLabel from './TimeLeftLabel';
-import { LocationLabel } from '../../Components';
+import { LocationLabel, StarRating } from '../../Components';
 import s, { cardHeight, cardWidth } from './ChallengeCardJumbo.style';
 import { Colors } from '../../_utils';
 
@@ -14,6 +14,7 @@ type Props = {
   picture: string,
   endDate: string,
   locationLabel: string,
+  rating: number,
 };
 
 const ChallengeCardJumbo = (props: Props) => (
@@ -43,6 +44,9 @@ const ChallengeCardJumbo = (props: Props) => (
         <View style={s.footerWrapper}>
           <LocationLabel
             label={props.locationLabel}
+          />
+          <StarRating
+            rating={props.rating}
           />
         </View>
       </LinearGradient>
