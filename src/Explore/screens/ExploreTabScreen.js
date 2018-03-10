@@ -46,7 +46,7 @@ export default class ExploreTabScreen extends Component<Props> {
   render() {
     return (
       <SafeAreaView style={[sBase.wrapper, s.wrapper]}>
-        <GifeStatusBar white />
+        <GifeStatusBar grey />
         <ScrollView>
           {/* space <==> */}
           <View style={{ height: 20 }} />

@@ -4,7 +4,6 @@ import Colors from './colors';
 
 export default StyleSheet.create({
   wrapper: {
-    paddingTop: 20,
     paddingHorizontal: sConst.horizontalPad,
     flex: 1,
   },
