@@ -166,7 +166,7 @@ export const challengeForHomePage = {
 
 export const allChallenges = challenges;
 export const getAllPlaces = places;
-export const getSections = sections;
+export const getSections = () => sections;
 
 export const getChallengeById = id => challenges[id];
 export const getPlaceById = id => places[id];
