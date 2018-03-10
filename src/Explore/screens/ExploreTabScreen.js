@@ -21,6 +21,7 @@ export default class ExploreTabScreen extends Component<Props> {
       <SafeAreaView style={[sBase.wrapper, { paddingHorizontal: 0 }]}>
         <GifeStatusBar white />
         <ScrollView>
+          {/* Spotlight */}
           <Text style={[sBase.header]}>
             <Text style={sBase.headerFront}>
               ภารกิจ

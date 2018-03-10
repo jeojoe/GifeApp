@@ -43,16 +43,16 @@ export default StyleSheet.create({
   },
   // Reward
   rewardWrapper: {
-    height: 47,
+    height: 45,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: '5%',
   },
   rewardIconWrapper: {
-    width: 36,
-    height: 36,
-    backgroundColor: Colors.main,
-    borderRadius: 18,
+    width: 32,
+    height: 32,
+    backgroundColor: Colors.mainDark,
+    borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 7,
