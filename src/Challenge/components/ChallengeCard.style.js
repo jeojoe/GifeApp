@@ -23,5 +23,6 @@ export default StyleSheet.create({
   title: {
     fontWeight: '500',
     marginBottom: 5,
+    color: '#222',
   },
 });

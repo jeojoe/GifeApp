@@ -26,7 +26,7 @@ const ChallengeSection = (props: Props) => (
       {props.title}
     </Text>
     <View style={s.wrapper}>
-      <View style={s.column}>
+      <View style={[s.column, { marginRight: props.spaceBetweenPercent }]}>
         <ChallengeCard
           title={props.challenges[0].challenge_name}
           picture={props.challenges[0].challenge_picture}
@@ -35,8 +35,7 @@ const ChallengeSection = (props: Props) => (
           rating={props.challenges[0].challenge_total_rating}
         />
       </View>
-      <View style={{ flexBasis: props.spaceBetweenPercent }} />
-      <View style={s.column}>
+      <View style={[s.column, { marginLeft: props.spaceBetweenPercent }]}>
         <ChallengeCard
           title={props.challenges[1].challenge_name}
           picture={props.challenges[1].challenge_picture}

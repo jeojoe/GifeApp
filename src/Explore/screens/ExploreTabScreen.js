@@ -37,7 +37,7 @@ export default class ExploreTabScreen extends Component<Props> {
         key={section.id}
         title={section.title}
         paddingHorizontal={20}
-        spaceBetweenPercent="5%"
+        spaceBetweenPercent="2.5%"
         challenges={section.challenges}
       />
     ));

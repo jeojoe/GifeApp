@@ -15,6 +15,7 @@ export default StyleSheet.create({
     fontSize: 24,
     marginBottom: 18,
     fontFamily: sConst.FontThHeader,
+    color: '#222',
   },
   headerFront: {
     color: Colors.textGrey,
