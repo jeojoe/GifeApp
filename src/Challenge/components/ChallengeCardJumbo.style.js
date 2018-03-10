@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { Colors } from '../../_utils';
 
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
@@ -43,8 +44,18 @@ export default StyleSheet.create({
   // Reward
   rewardWrapper: {
     height: 47,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: '5%',
+  },
+  rewardIconWrapper: {
+    width: 36,
+    height: 36,
+    backgroundColor: Colors.main,
+    borderRadius: 18,
     justifyContent: 'center',
-    paddingHorizontal: innerHorizontalPad,
+    alignItems: 'center',
+    marginRight: 7,
   },
   rewardText: {
     color: '#fff',

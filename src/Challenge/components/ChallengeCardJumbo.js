@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, Text, ImageBackground } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import TimeLeftLabel from './TimeLeftLabel';
 import { LocationLabel } from '../../Components';
@@ -50,9 +51,12 @@ const ChallengeCardJumbo = (props: Props) => (
     {/* Reward */}
     <LinearGradient
       colors={[Colors.rewardBgLeft, Colors.rewardBgRight]}
-      start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }}
+      start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }}
       style={s.rewardWrapper}
     >
+      <View style={s.rewardIconWrapper}>
+        <Icon name="gift" color="#fff" size={20} />
+      </View>
       <Text style={s.rewardText} numberOfLines={1}>ที่พักในโรงแรม HQO 1 คืน ฟรี!</Text>
     </LinearGradient>
   </ImageBackground>
