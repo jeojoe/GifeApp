@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
-import { View, Text, ImageBackground } from 'react-native';
+import { withNavigation } from 'react-navigation';
+import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 
 import TimeLeftLabel from './TimeLeftLabel';
 import RewardLabel from './RewardLabel';
@@ -15,9 +16,14 @@ type Props = {
   endDate: string,
   locationLabel: string,
   rating: number,
+  navigation: Object,
 };
 const ChallengeCard = (props: Props) => (
-  <View style={s.wrapper}>
+  <TouchableOpacity
+    activeOpacity={0.7}
+    style={s.wrapper}
+    onPress={() => props.navigation.navigate('Challenge')}
+  >
     <ImageBackground
       source={{ uri: props.picture }}
       style={s.imageWrapper}
@@ -48,7 +54,7 @@ const ChallengeCard = (props: Props) => (
         rating={props.rating}
       />
     </View>
-  </View>
+  </TouchableOpacity>
 );
 
-export default ChallengeCard;
+export default withNavigation(ChallengeCard);

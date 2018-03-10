@@ -12,7 +12,6 @@ type Props = {};
 
 class SpotlightCarousel extends Component<Props> {
   _renderItems = ({ item, index }) => {
-    console.log(item, index);
     return (
       <ChallengeCardJumbo
         title={item.challenge_name}

@@ -1,8 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 
 const ChallengeScreen = () => (
-  <Text>challenge screen</Text>
+  <ScrollView>
+    <Text>challenge screen</Text>
+    <Text>challenge screen</Text><Text>challenge screen</Text><Text>challenge screen</Text><Text>challenge screen</Text><Text>challenge screen</Text><Text>challenge screen</Text><Text>challenge screen</Text>
+  </ScrollView>
 );
 
 ChallengeScreen.navigationOptions = {
