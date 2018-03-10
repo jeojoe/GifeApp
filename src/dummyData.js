@@ -143,6 +143,20 @@ const challenges = [{
   challenge_location_label: 'เชียงใหม่',
 }];
 
+const sections = [{
+  id: 0,
+  title: 'อาหาร',
+  challenges: [challenges[0], challenges[1]],
+}, {
+  id: 1,
+  title: 'สถานที่ท่องเที่ยว',
+  challenges: [challenges[2], challenges[0]],
+}, {
+  id: 2,
+  title: 'กิจกรรม',
+  challenges: [challenges[1], challenges[2]],
+}];
+
 export const challengeForHomePage = {
   spotlight: [challenges[2], challenges[0], challenges[1]],
   food: [challenges[1], challenges[0]],
@@ -152,6 +166,7 @@ export const challengeForHomePage = {
 
 export const allChallenges = challenges;
 export const getAllPlaces = places;
+export const getSections = sections;
 
 export const getChallengeById = id => challenges[id];
 export const getPlaceById = id => places[id];
