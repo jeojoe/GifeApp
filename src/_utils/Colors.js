@@ -5,6 +5,9 @@ export default {
   rewardBgRight: '#F572B4',
   rewardBgLeft: '#EF1D6B',
 
+  // bg
+  bgGrey: '#F9F9F9',
+
   // input
   lightPink: '#FF4A8D',
   textOnLightPink: '#FFECF3',
