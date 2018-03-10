@@ -41,25 +41,4 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  // Reward
-  rewardWrapper: {
-    height: 45,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: '5%',
-  },
-  rewardIconWrapper: {
-    width: 32,
-    height: 32,
-    backgroundColor: Colors.mainDark,
-    borderRadius: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 7,
-  },
-  rewardText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
 });
