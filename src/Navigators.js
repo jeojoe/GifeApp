@@ -9,7 +9,6 @@ import * as Challenge from './Challenge';
 export const MainTab = TabNavigator({
   ExploreTab: {
     screen: Explore.ExploreTabScreen,
-
   },
   GifeTab: {
     screen: Gife.GifeTabScreen,
@@ -21,6 +20,13 @@ export const MainTab = TabNavigator({
     screen: Profile.ProfileTabScreen,
   },
 }, {
+  tabBarOptions: {
+    showLabel: false,
+    style: {
+      borderTopWidth: 0,
+      backgroundColor: '#fff',
+    },
+  },
   tabBarComponent: TabBarBottom,
   tabBarPosition: 'bottom',
   swipeEnabled: false,

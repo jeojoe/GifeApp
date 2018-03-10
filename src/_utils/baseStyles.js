@@ -6,7 +6,6 @@ export default StyleSheet.create({
   wrapper: {
     paddingTop: 20,
     paddingHorizontal: sConst.horizontalPad,
-    backgroundColor: '#fff',
     flex: 1,
   },
   horizontalPad: {

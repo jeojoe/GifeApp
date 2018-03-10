@@ -19,6 +19,7 @@ export default {
 
   // text
   textGrey: '#525252',
+  textGreyLighter: '#777',
 
   // label
   rating: '#FFD12E',
