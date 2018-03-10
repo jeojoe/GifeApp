@@ -1,6 +1,7 @@
 export default {
   // ci
   main: '#E30560',
+  mainDark: '#B90152',
   rewardBgRight: '#F572B4',
   rewardBgLeft: '#EF1D6B',
 
