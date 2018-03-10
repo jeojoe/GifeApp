@@ -16,7 +16,7 @@ export default StyleSheet.create({
     paddingHorizontal: 32,
     fontSize: 24,
     marginBottom: 18,
-    fontFamily: 'NotoSansThaiUI-Medium',
+    fontFamily: sConst.FontThHeader,
   },
   headerFront: {
     color: Colors.textGrey,

@@ -38,7 +38,9 @@ export default StyleSheet.create({
     marginBottom: 5,
   },
   footerWrapper: {
+    flexGrow: 0,
     flexDirection: 'row',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
   },
 });

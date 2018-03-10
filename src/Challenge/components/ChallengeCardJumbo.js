@@ -53,7 +53,7 @@ const ChallengeCardJumbo = (props: Props) => (
 
     {/* Reward */}
     <RewardLabel
-      label="hey"
+      label="ที่พักในโรงแรม HQO 1 คืน ฟรี!"
       size="jumbo"
     />
 

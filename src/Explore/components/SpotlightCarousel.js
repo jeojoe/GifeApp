@@ -26,12 +26,14 @@ class SpotlightCarousel extends Component<Props> {
 
   render() {
     return (
-      <Carousel
-        data={allChallenges}
-        renderItem={this._renderItems}
-        sliderWidth={sliderWidth}
-        itemWidth={ChallengeCardJumbo.width}
-      />
+      <View style={s.wrapper}>
+        <Carousel
+          data={allChallenges}
+          renderItem={this._renderItems}
+          sliderWidth={sliderWidth}
+          itemWidth={ChallengeCardJumbo.width}
+        />
+      </View>
     );
   }
 }

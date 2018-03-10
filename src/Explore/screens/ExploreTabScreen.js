@@ -23,6 +23,7 @@ export default class ExploreTabScreen extends Component<Props> {
   _renderSections = () => {
     return getSections().map(section => (
       <ChallengeSection
+        key={section.id}
         title={section.title}
         paddingHorizontal={20}
         spaceBetweenPercent="5%"
@@ -36,17 +37,18 @@ export default class ExploreTabScreen extends Component<Props> {
       <SafeAreaView style={[sBase.wrapper, { paddingHorizontal: 0 }]}>
         <GifeStatusBar white />
         <ScrollView>
+          {/* space <==> */}
+          <View style={{ height: 20 }} />
+
           {/* Spotlight */}
-          <View style={{ marginBottom: 20 }}>
-            <Text style={[sBase.header]}>
-              <Text style={sBase.headerFront}>
-                ภารกิจ
-              </Text>
-              {' '}
-              <Text>โดดเด่นและแนะนำ</Text>
+          <Text style={[sBase.header]}>
+            <Text style={sBase.headerFront}>
+              ภารกิจ
             </Text>
-            <SpotlightCarousel />
-          </View>
+            {' '}
+            <Text>โดดเด่นและแนะนำ</Text>
+          </Text>
+          <SpotlightCarousel />
 
           {/* Sections */}
           {this._renderSections()}
