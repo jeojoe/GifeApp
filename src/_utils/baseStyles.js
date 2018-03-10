@@ -13,10 +13,10 @@ export default StyleSheet.create({
     paddingHorizontal: sConst.horizontalPad,
   },
   header: {
-    fontWeight: 'bold',
     paddingHorizontal: 32,
-    fontSize: 22,
+    fontSize: 24,
     marginBottom: 18,
+    fontFamily: 'NotoSansThaiUI-SemiBold',
   },
   headerFront: {
     color: Colors.textGrey,

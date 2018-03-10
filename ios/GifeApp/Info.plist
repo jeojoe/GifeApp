@@ -16,6 +16,8 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>NotoSansThaiUI-SemiBold.ttf</string>
+		<string>NotoSansThaiUI-Regular.ttf</string>
 	</array>
 	<key>LSApplicationCategoryType</key>
 	<string/>
