@@ -15,4 +15,7 @@ export default {
 
   // text
   textGrey: '#525252',
+
+  // label
+  rating: '#FFD12E',
 };
