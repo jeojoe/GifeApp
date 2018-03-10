@@ -19,4 +19,7 @@ export default {
 
   // label
   rating: '#FFD12E',
+
+  // shadow
+  shadow: 'rgba(129,129,129,.5)',
 };
