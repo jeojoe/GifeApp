@@ -57,6 +57,7 @@
 		CC09D0363F774D048EC76B56 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AD45B23FCE742A1ADEEF619 /* Zocial.ttf */; };
 		CA26452CFF6D4270AD0FB612 /* NotoSansThaiUI-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5228D099EF469A904A36EC /* NotoSansThaiUI-SemiBold.ttf */; };
 		FAAB63172A1A429FA9430390 /* NotoSansThaiUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5D34F625AC1485FB5FE2F91 /* NotoSansThaiUI-Regular.ttf */; };
+		44946B6659D4459DAB8A85C7 /* NotoSansThaiUI-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACCB1BB044CB44198FFC7702 /* NotoSansThaiUI-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -407,6 +408,7 @@
 		1AD45B23FCE742A1ADEEF619 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DF5228D099EF469A904A36EC /* NotoSansThaiUI-SemiBold.ttf */ = {isa = PBXFileReference; name = "NotoSansThaiUI-SemiBold.ttf"; path = "../src/_assets/fonts/NotoSansThaiUI-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D5D34F625AC1485FB5FE2F91 /* NotoSansThaiUI-Regular.ttf */ = {isa = PBXFileReference; name = "NotoSansThaiUI-Regular.ttf"; path = "../src/_assets/fonts/NotoSansThaiUI-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ACCB1BB044CB44198FFC7702 /* NotoSansThaiUI-Medium.ttf */ = {isa = PBXFileReference; name = "NotoSansThaiUI-Medium.ttf"; path = "../src/_assets/fonts/NotoSansThaiUI-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -726,6 +728,7 @@
 				1AD45B23FCE742A1ADEEF619 /* Zocial.ttf */,
 				DF5228D099EF469A904A36EC /* NotoSansThaiUI-SemiBold.ttf */,
 				D5D34F625AC1485FB5FE2F91 /* NotoSansThaiUI-Regular.ttf */,
+				ACCB1BB044CB44198FFC7702 /* NotoSansThaiUI-Medium.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1220,6 +1223,7 @@
 				CC09D0363F774D048EC76B56 /* Zocial.ttf in Resources */,
 				CA26452CFF6D4270AD0FB612 /* NotoSansThaiUI-SemiBold.ttf in Resources */,
 				FAAB63172A1A429FA9430390 /* NotoSansThaiUI-Regular.ttf in Resources */,
+				44946B6659D4459DAB8A85C7 /* NotoSansThaiUI-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

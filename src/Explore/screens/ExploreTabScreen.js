@@ -22,14 +22,25 @@ export default class ExploreTabScreen extends Component<Props> {
         <GifeStatusBar white />
         <ScrollView>
           {/* Spotlight */}
+          <View style={{ marginBottom: 20 }}>
+            <Text style={[sBase.header]}>
+              <Text style={sBase.headerFront}>
+                ภารกิจ
+              </Text>
+              {' '}
+              <Text>โดดเด่นและแนะนำ</Text>
+            </Text>
+            <SpotlightCarousel />
+          </View>
+
+          {/* Sections */}
           <Text style={[sBase.header]}>
             <Text style={sBase.headerFront}>
               ภารกิจ
             </Text>
             {' '}
-            <Text>โดดเด่นและแนะนำ</Text>
+            <Text>อาหาร</Text>
           </Text>
-          <SpotlightCarousel />
         </ScrollView>
       </SafeAreaView>
     );
