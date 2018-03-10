@@ -22,4 +22,10 @@ export default StyleSheet.create({
     color: Colors.textGrey,
     marginRight: 100,
   },
+  shadow: {
+    shadowColor: Colors.shadow,
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 10,
+    shadowRadius: 10,
+  },
 });
