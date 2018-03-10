@@ -3,11 +3,17 @@ import {
   Dimensions,
   Image,
   ListView,
-  StyleSheet,
   Text,
   View,
 } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
+
+import { Colors } from '../../_utils';
+import TimeLeftLabel from '../components/TimeLeftLabel';
+import { LocationLabel, StarRating } from '../../Components';
+import s, { PARALLAX_HEADER_HEIGHT, STICKY_HEADER_HEIGHT } from './ChallengeScreen.style';
+
+const window = Dimensions.get('window');
 
 class ChallengeScreen extends Component {
   constructor(props) {
@@ -32,24 +38,23 @@ class ChallengeScreen extends Component {
   }
 
   render() {
-    const { onScroll = () => {} } = this.props;
     return (
       <ListView
         ref="ListView"
-        style={styles.container}
+        style={s.container}
         dataSource={this.state.dataSource}
         renderRow={rowData => (
-          <View key={rowData} style={styles.row}>
-            <Text style={styles.rowText}>
+          <View key={rowData} style={s.row}>
+            <Text style={s.rowText}>
               { rowData }
             </Text>
           </View>
         )}
         renderScrollComponent={props => (
           <ParallaxScrollView
-            onScroll={onScroll}
+            // onScroll={onScroll}
 
-            headerBackgroundColor="red"
+            backgroundColor={Colors.main}
             stickyHeaderHeight={STICKY_HEADER_HEIGHT}
             parallaxHeaderHeight={PARALLAX_HEADER_HEIGHT}
             backgroundSpeed={10}
@@ -58,7 +63,7 @@ class ChallengeScreen extends Component {
               <View key="background">
                 <Image
                   source={{
-                    uri: 'https://i.ytimg.com/vi/P-NZei5ANaQ/maxresdefault.jpg',
+                    uri: 'https://www.goway.com/media/uploads/asia/images/thailand/general_thailand/thai_boats_on_beach_islandparadise_island_in_thailand_1_hero.jpg',
                     width: window.width,
                     height: PARALLAX_HEADER_HEIGHT,
                   }}
@@ -76,37 +81,49 @@ class ChallengeScreen extends Component {
             )}
 
             renderForeground={() => (
-              <View key="parallax-header" style={styles.parallaxHeader}>
-                <Image
-                  style={styles.avatar}
-                  source={{
-                    uri: 'https://pbs.twimg.com/profile_images/2694242404/5b0619220a92d391534b0cd89bf5adc1_400x400.jpeg',
-                    width: AVATAR_SIZE,
-                    height: AVATAR_SIZE,
-                  }}
-                />
-                <Text style={styles.sectionSpeakerText}>
-                  ChallengeScreen by Rich Hickey
+              <View key="parallax-header" style={s.parallaxHeader}>
+                <View style={{ marginBottom: 15 }}>
+                  <TimeLeftLabel
+                    endDate={new Date()}
+                  />
+                </View>
+                <Text style={s.title}>
+                  ทริป 5 สถานที่ท่องเที่ยว ผจญภัยในหัวหิน !
                 </Text>
-                <Text style={styles.sectionTitleText}>
-                  CTO of Cognitec, Creator of Clojure
-                </Text>
+                <View style={s.footerWrapper}>
+                  <View style={{ marginRight: 15 }}>
+                    <LocationLabel
+                      label="ประจวบครีขันธ์"
+                      size={13}
+                      noWrap
+                    />
+                  </View>
+                  <StarRating
+                    size={13}
+                    rating={5.0}
+                  />
+                </View>
               </View>
             )}
 
             renderStickyHeader={() => (
-              <View key="sticky-header" style={styles.stickySection}>
-                <Text style={styles.stickySectionText}>Rich Hickey Talks</Text>
+              <View key="sticky-header" style={s.stickySection}>
+                <Text
+                  style={s.stickyTitle}
+                  numberOfLines={1}
+                >
+                  ทริป 5 สถานที่ท่องเที่ยว ผจญภัยในหัวหิน !
+                </Text>
               </View>
             )}
 
             // renderFixedHeader={() => (
             //   <View
             //     key="fixed-header"
-            //     style={styles.fixedSection}
+            //     style={s.fixedSection}
             //   >
             //     <Text
-            //       style={styles.fixedSectionText}
+            //       style={s.fixedSectionText}
             //     >
             //       Share
             //     </Text>
@@ -119,79 +136,6 @@ class ChallengeScreen extends Component {
   }
 }
 
-const window = Dimensions.get('window');
-
-const AVATAR_SIZE = 120;
-const ROW_HEIGHT = 60;
-const PARALLAX_HEADER_HEIGHT = 350;
-const STICKY_HEADER_HEIGHT = 65;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'red',
-  },
-  background: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: window.width,
-    height: PARALLAX_HEADER_HEIGHT,
-  },
-  stickySection: {
-    height: STICKY_HEADER_HEIGHT,
-    width: 300,
-    paddingLeft: 30,
-    justifyContent: 'flex-end',
-  },
-  stickySectionText: {
-    color: 'white',
-    fontSize: 20,
-    margin: 10,
-  },
-  fixedSection: {
-    position: 'absolute',
-    bottom: 10,
-    right: 10,
-  },
-  fixedSectionText: {
-    color: '#999',
-    fontSize: 20,
-  },
-  parallaxHeader: {
-    alignItems: 'center',
-    flex: 1,
-    flexDirection: 'column',
-    paddingTop: 100,
-  },
-  avatar: {
-    marginBottom: 10,
-    borderRadius: AVATAR_SIZE / 2,
-  },
-  sectionSpeakerText: {
-    color: 'white',
-    fontSize: 24,
-    paddingVertical: 5,
-  },
-  sectionTitleText: {
-    color: 'white',
-    fontSize: 18,
-    paddingVertical: 5,
-  },
-  row: {
-    overflow: 'hidden',
-    paddingHorizontal: 10,
-    height: ROW_HEIGHT,
-    backgroundColor: 'white',
-    borderColor: '#ccc',
-    borderBottomWidth: 1,
-    justifyContent: 'center',
-  },
-  rowText: {
-    fontSize: 20,
-  },
-});
-
 ChallengeScreen.navigationOptions = {
   // headerBackTitle: 'Back',
   headerTintColor: '#fff',
@@ -199,7 +143,7 @@ ChallengeScreen.navigationOptions = {
   headerStyle: {
     borderBottomColor: 'rgba(0,0,0,0)',
   },
-  headerRight: <Text>sdklfjs</Text>,
+  // headerRight: <Text></Text>,
 };
 
 export default ChallengeScreen;
