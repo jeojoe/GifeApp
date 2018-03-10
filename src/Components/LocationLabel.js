@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
 import { View, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import s from './LocationLabel.style';
 
 type Props = {
@@ -10,6 +12,10 @@ type Props = {
 };
 const LocationLabel = (props: Props) => (
   <View style={s.wrapper}>
+    <Icon
+      name="place" color={props.color} size={props.size}
+      style={s.icon}
+    />
     <Text
       style={[s.label, {
         color: props.color,
