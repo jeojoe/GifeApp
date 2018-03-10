@@ -7,6 +7,9 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
@@ -36,9 +39,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new FBSDKPackage(mCallbackManager),
+            new VectorIconsPackage(),
             new LinearGradientPackage(),
-            new LinearGradientPackage()
+            new FBSDKPackage(mCallbackManager)
       );
     }
 
