@@ -7,14 +7,24 @@ import s from './TimeLeftLabel.style';
 
 type Props = {
   endDate: string,
+  small?: boolean,
 };
 
-export default (props: Props) => {
+const TimeLeftLabel = (props: Props) => {
   const timeLeft = moment(props.endDate).fromNow();
   return (
-    <View style={s.wrapper}>
-      <Text style={s.text}>{timeLeft}</Text>
+    <View
+      style={s.wrapper}
+    >
+      <Text style={[s.text, props.small && { fontSize: 9 }]}>
+        {timeLeft}
+      </Text>
     </View>
   );
 };
 
+TimeLeftLabel.defaultProps = {
+  small: false,
+};
+
+export default TimeLeftLabel;
