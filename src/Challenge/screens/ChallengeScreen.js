@@ -10,6 +10,7 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 
 import { Colors } from '../../_utils';
 import TimeLeftLabel from '../components/TimeLeftLabel';
+import RewardLabelDetailed from '../components/RewardLabelDetailed';
 import { LocationLabel, StarRating } from '../../Components';
 import s, { PARALLAX_HEADER_HEIGHT, STICKY_HEADER_HEIGHT } from './ChallengeScreen.style';
 
@@ -22,17 +23,10 @@ class ChallengeScreen extends Component {
       dataSource: new ListView.DataSource({
         rowHasChanged: (r1, r2) => r1 !== r2,
       }).cloneWithRows([
-        'Simplicity Matters',
-        'Hammock Driven Development',
-        'Value of Values',
-        'Are We There Yet?',
-        'The Language of the System',
-        'Design, Composition, and Performance',
-        'Clojure core.async',
-        'The Functional Database',
-        'Deconstructing the Database',
-        'Hammock Driven Development',
-        'Value of Values',
+        {
+          id: 'reward-detailed',
+          Child: RewardLabelDetailed,
+        },
       ]),
     };
   }
@@ -43,13 +37,7 @@ class ChallengeScreen extends Component {
         ref="ListView"
         style={s.container}
         dataSource={this.state.dataSource}
-        renderRow={rowData => (
-          <View key={rowData} style={s.row}>
-            <Text style={s.rowText}>
-              { rowData }
-            </Text>
-          </View>
-        )}
+        renderRow={({ id, Child }) => <Child key={id} />}
         renderScrollComponent={props => (
           <ParallaxScrollView
             // onScroll={onScroll}
