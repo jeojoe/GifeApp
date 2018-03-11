@@ -5,6 +5,7 @@ import * as Gife from './Gife';
 import * as Profile from './Profile';
 import * as Reward from './Reward';
 import * as Challenge from './Challenge';
+import * as Place from './Place';
 
 export const MainTab = TabNavigator({
   ExploreTab: {
@@ -39,5 +40,8 @@ export const RootStack = StackNavigator({
   },
   Challenge: {
     screen: Challenge.ChallengeScreen,
+  },
+  Place: {
+    screen: Place.PlaceScreen,
   },
 });

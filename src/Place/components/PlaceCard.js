@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import { withNavigation } from 'react-navigation';
 import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -14,6 +15,7 @@ type Props = {
   jumbo?: boolean,
   hasButton?: boolean,
   buttonType?: 'qr' | 'checkin',
+  navigation: Object,
 };
 class PlaceCard extends Component<Props> {
   static defaultProps = {
@@ -34,7 +36,7 @@ class PlaceCard extends Component<Props> {
     return (
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={() => {}}
+        onPress={() => this.props.navigation.navigate('Place')}
         style={this.props.jumbo ? s.jumboWrapper : s.wrapper}
       >
         <ImageBackground
@@ -66,4 +68,4 @@ class PlaceCard extends Component<Props> {
   }
 }
 
-export default PlaceCard;
+export default withNavigation(PlaceCard);
