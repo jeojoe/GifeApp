@@ -11,6 +11,7 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import { Colors } from '../../_utils';
 import TimeLeftLabel from '../components/TimeLeftLabel';
 import RewardLabelDetailed from '../components/RewardLabelDetailed';
+import ChallengeDetailSection from '../components/ChallengeDetailSection';
 import { LocationLabel, StarRating } from '../../Components';
 import s, { PARALLAX_HEADER_HEIGHT, STICKY_HEADER_HEIGHT } from './ChallengeScreen.style';
 
@@ -26,6 +27,10 @@ class ChallengeScreen extends Component {
         {
           id: 'reward-detailed',
           Child: RewardLabelDetailed,
+        },
+        {
+          id: 'challenge-details',
+          Child: ChallengeDetailSection,
         },
       ]),
     };
