@@ -3,14 +3,16 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import moment from 'moment';
 
+import { PlaceCard } from '../../Place';
 import s from './ChallengeDetailSection.style';
 
-const ChallengeDetailSection = (props: {
+type Props = {
   goalDescription: string,
   startDate: Date,
   endDate: Date,
   places: Array<string>,
-}) => {
+};
+const ChallengeDetailSection = (props: Props) => {
   const timeLeft = moment(props.endDate).fromNow();
   const periodString = `${moment(props.startDate).format()} + ${moment(props.endDate).format()}`;
 
@@ -28,6 +30,10 @@ const ChallengeDetailSection = (props: {
           {/* {periodString} */}
           <Text>14/03/2018 - 16/03/2018</Text>
         </View>
+      </View>
+
+      <View style={s.placeWrapper}>
+        <PlaceCard />
       </View>
     </View>
   );

@@ -41,4 +41,7 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     paddingTop: 9,
   },
+  placeWrapper: {
+    marginBottom: 15,
+  },
 });
