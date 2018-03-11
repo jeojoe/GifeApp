@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Dimensions,
-  Image,
-  ListView,
-  Text,
-  View,
-} from 'react-native';
+import { Dimensions, Image, ListView, Text, View } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 
 import { Colors } from '../../_utils';
@@ -14,6 +8,10 @@ import RewardLabelDetailed from '../components/RewardLabelDetailed';
 import ChallengeDetailSection from '../components/ChallengeDetailSection';
 import { LocationLabel, StarRating } from '../../Components';
 import s, { PARALLAX_HEADER_HEIGHT, STICKY_HEADER_HEIGHT } from './ChallengeScreen.style';
+// Dummy
+import { allChallenges } from '../../dummyData';
+
+const data = allChallenges[1];
 
 const window = Dimensions.get('window');
 
@@ -56,7 +54,7 @@ class ChallengeScreen extends Component {
               <View key="background">
                 <Image
                   source={{
-                    uri: 'https://www.goway.com/media/uploads/asia/images/thailand/general_thailand/thai_boats_on_beach_islandparadise_island_in_thailand_1_hero.jpg',
+                    uri: data.challenge_picture,
                     width: window.width,
                     height: PARALLAX_HEADER_HEIGHT,
                   }}
@@ -81,19 +79,19 @@ class ChallengeScreen extends Component {
                   />
                 </View>
                 <Text style={s.title}>
-                  ทริป 5 สถานที่ท่องเที่ยว ผจญภัยในหัวหิน !
+                  {data.challenge_name}
                 </Text>
                 <View style={s.footerWrapper}>
                   <View style={{ marginRight: 15 }}>
                     <LocationLabel
-                      label="ประจวบครีขันธ์"
+                      label={data.challenge_location_label}
                       size={13}
                       noWrap
                     />
                   </View>
                   <StarRating
                     size={13}
-                    rating={5.0}
+                    rating={data.challenge_total_rating}
                   />
                 </View>
               </View>
@@ -105,7 +103,7 @@ class ChallengeScreen extends Component {
                   style={s.stickyTitle}
                   numberOfLines={1}
                 >
-                  ทริป 5 สถานที่ท่องเที่ยว ผจญภัยในหัวหิน !
+                  {data.challenge_name}
                 </Text>
               </View>
             )}

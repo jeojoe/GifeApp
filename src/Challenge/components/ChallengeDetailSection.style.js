@@ -22,7 +22,7 @@ export default StyleSheet.create({
     borderRadius: 15,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: Colors.border,
-    marginBottom: 15,
+    marginBottom: 30,
     overflow: 'hidden',
   },
   timeLeft: {
@@ -42,6 +42,6 @@ export default StyleSheet.create({
     paddingTop: 9,
   },
   placeWrapper: {
-    marginBottom: 15,
+    marginBottom: 20,
   },
 });

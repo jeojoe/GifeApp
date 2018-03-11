@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import { PlaceCard } from '../../Place';
 import s from './ChallengeDetailSection.style';
+import { getAllPlaces } from '../../dummyData';
 
 type Props = {
   goalDescription: string,
@@ -32,9 +33,17 @@ const ChallengeDetailSection = (props: Props) => {
         </View>
       </View>
 
-      <View style={s.placeWrapper}>
-        <PlaceCard />
-      </View>
+      {getAllPlaces.map(p => (
+        <View style={s.placeWrapper} key={p.place_id}>
+          <PlaceCard
+            jumbo
+            title={p.place_name}
+            locationLabel={`${p.place_district}, ${p.place_province}`}
+            rating={p.place_total_rating}
+            bannerImageUrl={p.place_picture}
+          />
+        </View>
+      ))}
     </View>
   );
 };
