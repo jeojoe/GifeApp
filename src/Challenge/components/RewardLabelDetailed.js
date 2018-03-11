@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -35,6 +35,20 @@ const RewardLabelDetailed = (props: Props) => {
 
       {/* Label */}
       <Text style={s.label}>ที่พักในโรงแรม HQO 1 คืน ฟรี!</Text>
+
+      {/* Sponsor */}
+      {true &&
+        <View>
+          <Text style={s.sponsorHeader}>
+            สนับสนุนโดย
+          </Text>
+          {/* <Text>Hotel.com</Text> */}
+          <Image
+            source={{ uri: 'https://a.cdn-hotels.com/cos/production35/d1963/6710bf70-c529-11e5-b39c-d89d672bfba8.jpg' }}
+            style={s.sponsorImage}
+          />
+        </View>
+      }
     </LinearGradient>
   );
 };
