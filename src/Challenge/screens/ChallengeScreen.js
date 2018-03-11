@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import { Dimensions, Image, ListView, Text, View, StatusBar } from 'react-native';
+import { Dimensions, Image, ListView, Text, View, StatusBar, TouchableOpacity } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 
 import { Colors } from '../../_utils';
 import TimeLeftLabel from '../components/TimeLeftLabel';
 import RewardLabelDetailed from '../components/RewardLabelDetailed';
 import ChallengeDetailSection from '../components/ChallengeDetailSection';
-import { LocationLabel, StarRating, GifeStatusBar } from '../../Components';
+import DoChallengeModal from './DoChallengeModal';
+import { LocationLabel, StarRating } from '../../Components';
+// WTF BUG!!
+import withChallengeRedux from '../../_hoc/withChallengeRedux';
+
 import s, { PARALLAX_HEADER_HEIGHT, STICKY_HEADER_HEIGHT } from './ChallengeScreen.style';
 // Dummy
 import { allChallenges } from '../../dummyData';
 
 const data = allChallenges[1];
-
 const window = Dimensions.get('window');
 
 class ChallengeScreen extends Component {
@@ -38,6 +41,9 @@ class ChallengeScreen extends Component {
     return (
       <View style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" />
+
+        <DoChallengeModal />
+
         <ListView
           ref="ListView"
           style={s.container}
@@ -125,6 +131,11 @@ class ChallengeScreen extends Component {
             />
           )}
         />
+        <TouchableOpacity
+          onPress={() => this.props.setDoChallengeModalVisible(true)}
+        >
+          <Text>sdl;fjsdlfk</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -140,4 +151,4 @@ ChallengeScreen.navigationOptions = {
   // headerRight: <Text></Text>,
 };
 
-export default ChallengeScreen;
+export default withChallengeRedux(ChallengeScreen);

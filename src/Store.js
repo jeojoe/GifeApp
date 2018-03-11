@@ -4,6 +4,7 @@ import logger from 'redux-logger';
 
 import { actionTypes } from './_constants';
 import { AuthReducers } from './Auth';
+import { ChallengeReducers } from './Challenge';
 
 // Reducers for global use
 const globalReducers = {
@@ -25,6 +26,7 @@ const globalReducers = {
 const middlewares = [thunk, logger];
 const reducers = combineReducers({
   ...AuthReducers,
+  ...ChallengeReducers,
   ...globalReducers,
 });
 
