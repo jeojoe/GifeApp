@@ -3,6 +3,7 @@ import GifeStatusBar from './GifeStatusBar';
 import SpinnerOverlay from './SpinnerOverlay';
 import LocationLabel from './LocationLabel';
 import StarRating from './StarRating';
+import Logo from './Logo';
 
 export {
   Button,
@@ -10,4 +11,5 @@ export {
   SpinnerOverlay,
   LocationLabel,
   StarRating,
+  Logo,
 };
