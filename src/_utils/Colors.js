@@ -14,8 +14,8 @@ export default {
   textOnLightPink: '#FFECF3',
 
   // button
-  buttonLeft: '#DF0084',
-  buttonRight: '#BB004D',
+  buttonLeft: '#BB004D',
+  buttonRight: '#DF0084',
   buttonShadowOnPink: 'rgba(127,0,51,0.5)',
 
   // text
