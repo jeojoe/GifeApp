@@ -1,40 +1,36 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { Colors } from '../../_utils';
 
-const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
-
-export const cardHeight = viewportWidth * 0.865;
-export const cardWidth = cardHeight;
-
+const { width } = Dimensions.get('window');
 const innerHorizontalPad = '7%';
 
 export default StyleSheet.create({
-  imageWrapper: {
-    height: cardHeight,
-    width: cardWidth,
+  // Fill outer wrapper
+  wrapper: {
+    width: width * 0.4,
+    height: 120,
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  jumboWrapper: {
+    width: width * 0.8,
+    height: 170,
     borderRadius: 10,
     overflow: 'hidden',
   },
-  timeLeft: {
-    position: 'absolute',
-    right: 15,
-    top: 12,
-  },
-  flexSpace: {
+  imageBg: {
     flex: 1,
     justifyContent: 'flex-end',
   },
-  // Header
   headerGradientWrapper: {
-    paddingBottom: 12,
-    paddingTop: 72,
+    paddingBottom: 15,
+    paddingTop: 20,
     paddingHorizontal: innerHorizontalPad,
   },
   title: {
     backgroundColor: 'transparent',
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: 22,
     marginBottom: 5,
   },
   footerWrapper: {

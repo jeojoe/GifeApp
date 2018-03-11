@@ -39,7 +39,7 @@ const ChallengeCardJumbo = (props: Props) => (
         <LinearGradient
           colors={['transparent', '#000']}
           start={{ x: 0.5, y: 0 }} end={{ x: 0.5, y: 1 }}
-          style={s.headerWrapper}
+          style={s.headerGradientWrapper}
         >
           {/* Title */}
           <Text style={s.title} numberOfLines={3}>
