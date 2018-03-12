@@ -43,7 +43,14 @@ class ChallengeScreen extends Component {
       <View style={{ flex: 1, backgroundColor: '#fff' }}>
         <StatusBar barStyle="light-content" />
 
-        <DoChallengeModal />
+        <DoChallengeModal
+          id={data.challenge_id}
+          title={data.challenge_name}
+          picture={data.challenge_picture}
+          endDate={data.challenge_end_date}
+          locationLabel={data.challenge_location_label}
+          rating={data.challenge_total_rating}
+        />
 
         <ListView
           ref="ListView"
