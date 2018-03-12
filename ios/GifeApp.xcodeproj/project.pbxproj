@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -59,6 +58,7 @@
 		DDFC147C204AACC3005C4F12 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFC1478204AACC3005C4F12 /* FBSDKLoginKit.framework */; };
 		FA534488DBD34D1BA46E9B7E /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 435160B8C4AA47EF93227566 /* Octicons.ttf */; };
 		FAAB63172A1A429FA9430390 /* NotoSansThaiUI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5D34F625AC1485FB5FE2F91 /* NotoSansThaiUI-Regular.ttf */; };
+		E812466388AF431082C9E5FC /* Bangers-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC67EF5B014DEB896830D3 /* Bangers-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -417,6 +417,7 @@
 		DDFC1478204AACC3005C4F12 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		DF5228D099EF469A904A36EC /* NotoSansThaiUI-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansThaiUI-SemiBold.ttf"; path = "../src/_assets/fonts/NotoSansThaiUI-SemiBold.ttf"; sourceTree = "<group>"; };
 		FF13BA67A2184E29A8CA1814 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		5AFC67EF5B014DEB896830D3 /* Bangers-Regular.ttf */ = {isa = PBXFileReference; name = "Bangers-Regular.ttf"; path = "../src/_assets/fonts/Bangers-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -709,6 +710,7 @@
 				DF5228D099EF469A904A36EC /* NotoSansThaiUI-SemiBold.ttf */,
 				D5D34F625AC1485FB5FE2F91 /* NotoSansThaiUI-Regular.ttf */,
 				ACCB1BB044CB44198FFC7702 /* NotoSansThaiUI-Medium.ttf */,
+				5AFC67EF5B014DEB896830D3 /* Bangers-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1251,6 +1253,7 @@
 				CA26452CFF6D4270AD0FB612 /* NotoSansThaiUI-SemiBold.ttf in Resources */,
 				FAAB63172A1A429FA9430390 /* NotoSansThaiUI-Regular.ttf in Resources */,
 				44946B6659D4459DAB8A85C7 /* NotoSansThaiUI-Medium.ttf in Resources */,
+				E812466388AF431082C9E5FC /* Bangers-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

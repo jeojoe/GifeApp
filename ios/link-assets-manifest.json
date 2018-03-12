@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/_assets/fonts/Bangers-Regular.ttf",
+      "sha1": "07a2cead2006f8d1b56a1b3303d64929977c6451"
+    },
+    {
+      "path": "src/_assets/fonts/NotoSansThaiUI-Bold.ttf",
+      "sha1": "f410e8029651e27cb522a8323403678c9b9aca9f"
+    },
+    {
+      "path": "src/_assets/fonts/NotoSansThaiUI-Medium.ttf",
+      "sha1": "3342f24db94494a29e250a8e701f6a9ee7d6b3db"
+    },
+    {
+      "path": "src/_assets/fonts/NotoSansThaiUI-Regular.ttf",
+      "sha1": "ff1ca179f1d475bf374b716bee3db0fec5a5847d"
+    },
+    {
+      "path": "src/_assets/fonts/NotoSansThaiUI-SemiBold.ttf",
+      "sha1": "83c505d35073e472f723710525934fc123f68b93"
+    }
+  ]
+}
