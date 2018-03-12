@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { sConst } from '../../_constants';
 
 const { width } = Dimensions.get('window');
-
 export const PARALLAX_HEADER_HEIGHT = width - 20;
 export const STICKY_HEADER_HEIGHT = 65;
 
@@ -56,5 +56,20 @@ export default StyleSheet.create({
   footerWrapper: {
     flexDirection: 'row',
     justifyContent: 'center',
+  },
+  doChallengeBtn: {
+    flexBasis: 65,
+    height: 65,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  doChallengeText: {
+    fontFamily: sConst.FontThHeader,
+    color: '#fff',
+    fontSize: 22,
+  },
+  logo: {
+    marginRight: 15,
   },
 });

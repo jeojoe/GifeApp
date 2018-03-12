@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Dimensions, Image, ListView, Text, View, StatusBar, TouchableOpacity } from 'react-native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
+import LinearGradient from 'react-native-linear-gradient';
 
 import { Colors } from '../../_utils';
 import TimeLeftLabel from '../components/TimeLeftLabel';
 import RewardLabelDetailed from '../components/RewardLabelDetailed';
 import ChallengeDetailSection from '../components/ChallengeDetailSection';
 import DoChallengeModal from './DoChallengeModal';
-import { LocationLabel, StarRating } from '../../Components';
+import { LocationLabel, StarRating, Logo } from '../../Components';
 // WTF BUG!!
 import withChallengeRedux from '../../_hoc/withChallengeRedux';
 
@@ -39,7 +40,7 @@ class ChallengeScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
         <StatusBar barStyle="light-content" />
 
         <DoChallengeModal />
@@ -134,7 +135,14 @@ class ChallengeScreen extends Component {
         <TouchableOpacity
           onPress={() => this.props.setDoChallengeModalVisible(true)}
         >
-          <Text>sdl;fjsdlfk</Text>
+          <LinearGradient
+            colors={[Colors.buttonLeft, Colors.buttonRight]}
+            start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }}
+            style={[s.doChallengeBtn]}
+          >
+            <Logo type="white" style={s.logo} />
+            <Text style={s.doChallengeText}>เริ่มทำภารกิจ</Text>
+          </LinearGradient>
         </TouchableOpacity>
       </View>
     );
