@@ -15,6 +15,7 @@ type Props = {
   endDate: string,
   locationLabel: string,
   rating: number,
+  disabled?: boolean | null,
   navigation: Object,
 };
 
@@ -22,6 +23,7 @@ const ChallengeCardJumbo = (props: Props) => (
   <TouchableOpacity
     activeOpacity={0.7}
     onPress={() => props.navigation.navigate('Challenge')}
+    disabled={props.disabled}
   >
     <ImageBackground
       style={s.imageWrapper}
