@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 import {
   Text,
   TouchableOpacity,
@@ -11,8 +12,9 @@ import s from './Button.style';
 
 type Props = {
   text: string,
-  bgColor?: 'white',
+  bgColor?: 'white' | 'pink',
   height?: number,
+  style?: StyleObj,
   onPress: () => void,
 }
 
@@ -23,19 +25,18 @@ const Button = (props: Props) => {
 
   if (props.bgColor === 'white') {
     leftColor = '#fff'; rightColor = '#fff'; textColor = Colors.main;
+  } else if (props.bgColor === 'pink') {
+    leftColor = Colors.main; rightColor = Colors.main; textColor = '#fff';
   }
 
   return (
     <TouchableOpacity
       onPress={() => props.onPress()}
-      style={[
-        s.button,
-        props.height && { height: props.height },
-      ]}
+      style={props.height && { height: props.height }}
     >
       <LinearGradient
         colors={[leftColor, rightColor]}
-        style={s.gradient}
+        style={[s.wrapper, props.style]}
         start={{ x: 0, y: 0.5 }} end={{ x: 1, y: 0.5 }}
       >
         <Text style={[s.text, { color: textColor }]}>
