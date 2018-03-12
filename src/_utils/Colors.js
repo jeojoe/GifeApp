@@ -8,7 +8,7 @@ export default {
   // bg & border
   bgGrey: '#F9F9F9',
   border: '#979797',
-  mainGradientTopLeft: 'rgba(252, 11, 105, 0.8)',
+  mainGradientTopLeft: 'rgba(252, 11, 105, 0.85)',
   mainGradientBottomRight: 'rgba(203, 17, 80, 1)',
 
   // input
